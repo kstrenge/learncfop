@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:widget_arrows/widget_arrows.dart';
 
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
