@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rubik/ui/widgets/algorithm_card_widget.dart';
-import 'package:rubik/data/algorithm.dart';
+import 'package:rubik/ui/widgets/pll_case_icon.dart';
 
 class PLL extends StatelessWidget {
   const PLL({super.key});
@@ -9,10 +8,10 @@ class PLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Center(child: Text("PLL"))),
-      body: const Padding(
-        padding: EdgeInsets.all(8),
-        child: Column(
-          children: [SizedBox()],
+      body: Center(
+        child: SizedBox(
+          height: 200,
+          child: PLLCaseIcon([1, 1, 1, 1]),
         ),
       ),
     );

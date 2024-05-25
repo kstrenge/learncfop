@@ -1,0 +1,11 @@
+{
+    "PLL": [
+        {
+            "title": "Fish",
+            "caseConfigurationSides": ["g", "g", "g", "o", "o", "o", "b", "b", "b", "r", "r", "r"],
+            "caseConfigurationArrows": [
+                [1, false, 9, true], [7, false, 3, true]
+            ]
+        }
+    ]
+}

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CaseIcon extends StatelessWidget {
+class OLLCaseIcon extends StatelessWidget {
   final List caseConfiguration;
-  const CaseIcon(this.caseConfiguration, {super.key});
+  const OLLCaseIcon(this.caseConfiguration, {super.key});
 
   @override
   Widget build(BuildContext context) {
