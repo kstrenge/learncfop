@@ -1,0 +1,61 @@
+{
+    "OLL2Look": [
+        {
+            "title": "Strich",
+            "caseConfiguration": [2, 10, 11, 12, 20],
+            "algorithm": "F R U R' U' F'",
+            "notes": "lol"
+        },
+        {
+            "title": "L-Form",
+            "caseConfiguration": [2, 9, 11, 12, 16],
+            "algorithm": "f R U R' U' f'"
+        },
+        {
+            "title": "Punkt",
+            "caseConfiguration": [2, 9, 11, 13, 20],
+            "algorithm": "(F R U R' U' F') (f R U R' U' f')",
+            "notes": "Strich + L"
+        },
+        {
+            "title": "Front- und Rückscheinwerfer",
+            "caseConfiguration": [1, 3, 6, 10, 11, 12, 16, 19, 21],
+            "algorithm": "F 3x(R U R' U') F'",
+            "notes": "F, dreimal Sexy-Move, F'"
+        },
+        {
+            "title": "Frontscheinwerfer und Hinterreifen",
+            "caseConfiguration": [3, 4, 6, 10, 11, 12, 14, 16, 21],
+            "algorithm": "(f R U R' U' f') (F R U R' U' F')",
+            "notes": "L + Strich"
+        },
+        {
+            "title": "Nur Rückscheinwerfer",
+            "caseConfiguration": [1, 3, 6, 10, 11, 12, 15, 16, 17],
+            "algorithm": "R2 D' R U2 R' D R U2 R"
+        },
+        {
+            "title": "Nur Vorderreifen",
+            "caseConfiguration": [1, 6, 7, 10, 11, 12, 16, 17, 19],
+            "algorithm": "r U R' U' r' F R F'"
+        },
+        {
+            "title": "Batman",
+            "caseConfiguration": [4, 6, 7, 10, 11, 12, 15, 16, 21],
+            "algorithm": "F' r U R' U' r' F R",
+            "notes": "Gleich wie Vorderreifen, nur das F' nach vorne"
+        },
+        {
+            "title": "Fisch von Vorne",
+            "caseConfiguration": [1, 6, 8, 10, 11, 12, 15, 16, 21],
+            "algorithm": "R U R' U R U2 R'"
+
+        },
+        {
+            "title": "Fisch von Hinten",
+            "caseConfiguration": [4, 6, 7, 10, 11, 12, 16, 18, 19],
+            "algorithm": "R U2 R' U' R, U' R'",
+            "notes": "Fisch von Vorne nur rückwärts"
+        }
+    ]
+}
