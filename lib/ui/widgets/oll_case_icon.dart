@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class OLLCaseIcon extends StatelessWidget {
-  final List caseConfiguration;
-  const OLLCaseIcon(this.caseConfiguration, {super.key});
+  final List<int> caseConfiguration;
+  const OLLCaseIcon({
+    required this.caseConfiguration,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    List<Color> colors = List.generate(22, (_) => const Color.fromRGBO(125, 125, 125, 1));
+    // draw pieces in grey or orange:
+    List<Color> colors = List.generate(22, (_) => const Color.fromRGBO(100, 100, 100, 1));
 
     for (int index in caseConfiguration) {
       colors[index] = Colors.yellow;

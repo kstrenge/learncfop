@@ -1,16 +1,35 @@
 import 'package:flutter/material.dart';
 
 class PLLCaseIcon extends StatelessWidget {
-  final List caseConfiguration;
-  const PLLCaseIcon(this.caseConfiguration, {super.key});
+  final List<String> caseConfiguration;
+  final List<List<Map<int, bool>>> arrows;
+
+  const PLLCaseIcon({
+    required this.caseConfiguration,
+    required this.arrows,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    List<Color> colors = List.generate(22, (_) => const Color.fromRGBO(125, 125, 125, 1));
-
-    for (int index in caseConfiguration) {
-      colors[index] = Colors.yellow;
+    // draw side pieces in their colors:
+    List<Color> sideColors = [];
+    for (String color in caseConfiguration) {
+      switch (color) {
+        case ("g"):
+          sideColors.add(Colors.green);
+        case ("r"):
+          sideColors.add(Colors.red);
+        case ("b"):
+          sideColors.add(Colors.blue);
+        case ("o"):
+          sideColors.add(Colors.orange);
+        default:
+          throw Error();
+      }
     }
+
+    //TODO: draw arrows!
 
     // breite mittelstein: 9
     // breite randstein: 3
@@ -38,11 +57,11 @@ class PLLCaseIcon extends StatelessWidget {
                 children: [
                   Expanded(flex: 4, child: Container(color: Colors.transparent)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 9, child: Container(color: colors[1])),
+                  Expanded(flex: 9, child: Container(color: sideColors[0])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 9, child: Container(color: colors[2])),
+                  Expanded(flex: 9, child: Container(color: sideColors[1])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 9, child: Container(color: colors[3])),
+                  Expanded(flex: 9, child: Container(color: sideColors[2])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 4, child: Container(color: Colors.transparent)),
                 ],
@@ -54,7 +73,7 @@ class PLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 3, child: Container(color: colors[4])),
+                  Expanded(flex: 3, child: Container(color: sideColors[11])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: Colors.yellow)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
@@ -62,7 +81,7 @@ class PLLCaseIcon extends StatelessWidget {
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: Colors.yellow)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 3, child: Container(color: colors[8])),
+                  Expanded(flex: 3, child: Container(color: sideColors[3])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                 ],
               ),
@@ -73,7 +92,7 @@ class PLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 3, child: Container(color: colors[9])),
+                  Expanded(flex: 3, child: Container(color: sideColors[10])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: Colors.yellow)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
@@ -81,7 +100,7 @@ class PLLCaseIcon extends StatelessWidget {
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: Colors.yellow)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 3, child: Container(color: colors[13])),
+                  Expanded(flex: 3, child: Container(color: sideColors[4])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                 ],
               ),
@@ -92,7 +111,7 @@ class PLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 3, child: Container(color: colors[14])),
+                  Expanded(flex: 3, child: Container(color: sideColors[9])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: Colors.yellow)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
@@ -100,7 +119,7 @@ class PLLCaseIcon extends StatelessWidget {
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: Colors.yellow)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 3, child: Container(color: colors[18])),
+                  Expanded(flex: 3, child: Container(color: sideColors[5])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                 ],
               ),
@@ -112,11 +131,11 @@ class PLLCaseIcon extends StatelessWidget {
                 children: [
                   Expanded(flex: 4, child: Container(color: Colors.transparent)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 9, child: Container(color: colors[19])),
+                  Expanded(flex: 9, child: Container(color: sideColors[8])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 9, child: Container(color: colors[20])),
+                  Expanded(flex: 9, child: Container(color: sideColors[7])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(flex: 9, child: Container(color: colors[21])),
+                  Expanded(flex: 9, child: Container(color: sideColors[6])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 4, child: Container(color: Colors.transparent)),
                 ],

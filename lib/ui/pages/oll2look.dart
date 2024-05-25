@@ -6,7 +6,7 @@ import '../../data/oll_algorithm.dart';
 import '../widgets/oll_algorithm_card.dart';
 
 Future<List<OLLAlgorithm>> loadAlgorithms() async {
-  final rawJson = await rootBundle.loadString("assets/oll2look_algorithms.json");
+  final rawJson = await rootBundle.loadString("assets/algorithms/oll2look_algorithms.json");
   Map<String, dynamic> data = jsonDecode(rawJson);
   List<OLLAlgorithm> algorithmList = [];
   for (Map<String, dynamic> jsonAlgorithm in data["OLL2Look"]) {

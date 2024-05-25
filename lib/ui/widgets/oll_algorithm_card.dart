@@ -15,7 +15,7 @@ class AlgorithmCard extends StatelessWidget {
           children: [
             SizedBox(
               height: 80,
-              child: OLLCaseIcon(algorithm.caseConfiguration),
+              child: OLLCaseIcon(caseConfiguration: algorithm.caseConfiguration),
             ),
             const SizedBox(width: 16),
             Column(

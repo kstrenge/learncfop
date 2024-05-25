@@ -1,6 +1,6 @@
 class OLLAlgorithm {
   final String title;
-  final dynamic caseConfiguration;
+  final List<int> caseConfiguration;
   final String algorithm;
   final String? notes;
 

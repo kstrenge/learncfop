@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rubik/data/oll_algorithm.dart';
-import 'package:rubik/ui/widgets/oll_case_icon.dart';
+import 'package:rubik/data/pll_algorithm.dart';
+import 'package:rubik/ui/widgets/pll_case_icon.dart';
 
 class AlgorithmCard extends StatelessWidget {
-  final OLLAlgorithm algorithm;
+  final PLLAlgorithm algorithm;
   const AlgorithmCard(this.algorithm, {super.key});
 
   @override
@@ -15,7 +15,7 @@ class AlgorithmCard extends StatelessWidget {
           children: [
             SizedBox(
               height: 80,
-              child: OLLCaseIcon(algorithm.caseConfiguration),
+              // child: PLLCaseIcon(algorithm.caseConfiguration),
             ),
             const SizedBox(width: 16),
             Column(
