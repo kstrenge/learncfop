@@ -116,7 +116,7 @@
         },
         {
             "id": 20,
-            "title": "Dot / Checkerboard",
+            "title": "Checkerboard",
             "caseConfiguration": [2, 5, 7, 9, 11, 13, 15, 17, 20],
             "algorithm": "r U R' U' M2 U R U' R' U' M'"
         },
@@ -285,7 +285,7 @@
         {
             "id": 48,
             "title": "Small L Shape",
-            "caseConfiguration": [3, 5, 6, 10, 11, 13, 14, 20, 21],
+            "caseConfiguration": [3, 4, 6, 10, 11, 13, 14, 20, 21],
             "algorithm": "F R U R' U' R U R' U' F'"
         },
         {
