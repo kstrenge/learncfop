@@ -2,9 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../data/pll_algorithm.dart';
-import '../widgets/pll_algorithm_card.dart';
-import '../widgets/pll_case_icon.dart';
+import '../../data/algorithm.dart';
+import '../widgets/algorithm_card.dart';
 
 Future<List<PLLAlgorithm>> loadAlgorithms() async {
   final rawJson = await rootBundle.loadString("assets/algorithms/pll_algorithms.json");
@@ -22,27 +21,29 @@ class PLL extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text("PLL"))),
-      body: Center(
-        child: SizedBox(
-          height: 200,
-          child: FutureBuilder(
-            future: loadAlgorithms(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return PLLCaseIcon(
-                  caseConfiguration: snapshot.data![0].caseConfiguration,
-                  arrows: snapshot.data![0].arrows,
-                );
-              }
-              if (snapshot.hasError) {
-                return Center(child: Text(snapshot.error.toString()));
-              } else {
-                return const Center(child: CircularProgressIndicator());
-              }
-            },
-          ),
+      appBar: AppBar(
+        title: const Center(
+          child: Text("Instant Permutation of Last Layer"),
         ),
+      ),
+      body: FutureBuilder(
+        future: loadAlgorithms(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                return AlgorithmCard.pll(snapshot.data![index]);
+              },
+            );
+          }
+          if (snapshot.hasError) {
+            return Text(snapshot.error.toString());
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
       ),
     );
   }

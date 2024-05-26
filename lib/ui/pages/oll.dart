@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../data/oll_algorithm.dart';
-import '../widgets/oll_algorithm_card.dart';
+import '../../data/algorithm.dart';
+import '../widgets/algorithm_card.dart';
 
 Future<List<OLLAlgorithm>> loadAlgorithms() async {
   final rawJson = await rootBundle.loadString("assets/algorithms/oll_algorithms.json");
@@ -34,7 +34,7 @@ class OLL extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                return AlgorithmCard(snapshot.data![index]);
+                return AlgorithmCard.oll(snapshot.data![index]);
               },
             );
           }
