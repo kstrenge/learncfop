@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rubik/ui/widgets/pll_case_icon.dart';
 
 import '../../data/algorithm.dart';
@@ -33,9 +34,9 @@ class AlgorithmCard extends StatelessWidget {
                 children: [
                   Text(
                     algorithm.title,
-                    style: const TextStyle(
+                    style: GoogleFonts.orbitron(
                       fontSize: 12,
-                      fontWeight: FontWeight.bold, // TODO: noch bolder
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                   Text(
