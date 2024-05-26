@@ -1,12 +1,186 @@
 {
     "PLL": [
         {
-            "title": "Fish",
-            "caseConfiguration": ["g", "g", "g", "o", "o", "o", "b", "b", "b", "r", "r", "r"],
+            "title": "Aa",
+            "caseConfiguration": ["r", "g", "b", "o", "r", "r", "b", "b", "o", "g", "o", "g"],
             "arrows": [
-                [1, false, 9, true], [7, false, 3, true]
+                [1, 3, false], [3, 7, false], [7, 1, false]
             ],
-            "algorithm": "LALALALA"
+            "algorithm": "x L2 D2 L' U' L D2 L' U L'",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Ab",
+            "caseConfiguration": ["o", "g", "g", "r", "r", "o", "g", "b", "r", "o", "o", "o"],
+            "arrows": [
+                [9, 1, false], [1, 7, false], [7, 9, false]
+            ],
+            "algorithm": "x' L2 D2 L U L' D2 L U' L",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "F",
+            "caseConfiguration": ["g", "b", "r", "b", "r", "g", "r", "g", "b", "o", "o", "o"],
+            "arrows": [
+                [2, 8, true], [3, 9, true]
+            ],
+            "algorithm": "R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Ga",
+            "caseConfiguration": ["g", "b", "r", "b", "r", "g", "r", "g", "b", "o", "g", "o"],
+            "arrows": [],
+            "algorithm": "R2 U R' U R' U' R U' R2 U' D R' U R D'",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Gb",
+            "caseConfiguration": ["g", "o", "r", "b", "b", "g", "r", "g", "b", "o", "r", "o"],
+            "arrows": [],
+            "algorithm": "R' U' R U D' R2 U R' U R U' R U' R2 D",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Gc",
+            "caseConfiguration": ["g", "r", "r", "b", "o", "r", "r", "g", "b", "o", "b", "o"],
+            "arrows": [],
+            "algorithm": "R2 U' R U' R U R' U R2 U D' R U' R' D",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Gd",
+            "caseConfiguration": ["g", "b", "r", "b", "g", "g", "r", "o", "b", "o", "r", "o"],
+            "arrows": [],
+            "algorithm": "R U R' U' D R2 U' R U' R' U R' U R2 D'",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Ja",
+            "caseConfiguration": ["g", "r", "r", "b", "g", "g", "r", "b", "b", "o", "o", "o"],
+            "arrows": [
+                [2, 6, true], [3, 9, true]
+            ],
+            "algorithm": "x R2 F R F' R U2 r' U r U2",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Jb",
+            "caseConfiguration": ["r", "r", "b", "o", "o", "r", "b", "b", "o", "g", "g", "g"],
+            "arrows": [
+                [3, 9, true], [6, 8, true]
+            ],
+            "algorithm": "R U R' F' R U R' U' R' F R2 U' R'",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Ra",
+            "caseConfiguration": ["r", "g", "b", "o", "b", "r", "b", 
+            "o", "o", "g", "r", "g"],
+            "arrows": [
+                [2, 4, true], [3, 9, true]
+            ],
+            "algorithm": "R U' R' U' R U R D R' U' R D' R' U2 R'",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "Rb",
+            "caseConfiguration": ["o", "o", "g", "r", "g", "o", "g", "b", "r", "b", "r", "b"],
+            "arrows": [
+                [3, 9, true], [4, 8, true]
+            ],
+            "algorithm": "R2 F R U R U' R' F' R U2 R' U2 R",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "T",
+            "caseConfiguration": ["g", "g", "r", "b", "o", "g", "r", "b", "b", "o", "r", "o"],
+            "arrows": [
+                [3, 9, true], [4, 6, true]
+            ],
+            "algorithm": "R U R' U' R' F R2 U' R' U' R U R' F'",
+            "notes": "Adjacent Corner Swap"
+        },
+        {
+            "title": "E",
+            "caseConfiguration": ["o", "g", "r", "b", "r", "g", "r", "b", "o", "g", "o", "b"],
+            "arrows": [
+                [1, 7, true], [3, 9, true]
+            ],
+            "algorithm": "x' L' U L D' L' U' L D L' U' L D' L' U L D",
+            "notes": "Diagonal Corner Swap"
+        },
+        {
+            "title": "Na",
+            "caseConfiguration": ["g", "g", "b", "o", "o", "r", "b", "b", "g", "r", "r", "o"],
+            "arrows": [
+                [3, 7, true], [4, 6, true]
+            ],
+            "algorithm": "R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'",
+            "notes": "Diagonal Corner Swap"
+        },
+        {
+            "title": "Nb",
+            "caseConfiguration": ["b", "g", "g", "r", "o", "o", "g", "b", "b", "o", "r", "r"],
+            "arrows": [
+                [1, 9, true], [4, 6, true]
+            ],
+            "algorithm": "R' U R U' R' F' U' F R U R' F R' F' R U' R",
+            "notes": "Diagonal Corner Swap"
+        },
+        {
+            "title": "V",
+            "caseConfiguration": ["b", "r", "g", "r", "g", "o", "g", "b", "b", "o", "g", "r"],
+            "arrows": [
+                [2, 6, true], [1, 9, true]
+            ],
+            "algorithm": "R' U R' U' y R' F' R2 U' R' U R' F R F",
+            "notes": "Diagonal Corner Swap"
+        },
+        {
+            "title": "Y",
+            "caseConfiguration": ["b", "o", "g", "r", "r", "o", "g", "b", "b", "o", "g", "r"],
+            "arrows": [
+                [1, 9, true], [4, 2, true]
+            ],
+            "algorithm": "R' U R' U' y R' F' R2 U' R' U R' F R F",
+            "notes": "Diagonal Corner Swap"
+        },
+        {
+            "title": "H",
+            "caseConfiguration": ["g", "b", "g", "r", "o", "r", "b", "g", "b", "o", "r", "o"],
+            "arrows": [
+                [2, 8, true], [4, 6, true]
+            ],
+            "algorithm": "M2 U M2 U2 M2 U M2",
+            "notes": "Edges Only"
+        },
+        {
+            "title": "Ua",
+            "caseConfiguration": ["g", "g", "g", "r", "o", "r", "b", "r", "b", "o", "b", "o"],
+            "arrows": [
+                [6, 4, false], [4, 8, false], [8, 6, false]
+            ],
+            "algorithm": "M2 U M U2 M' U M2",
+            "notes": "Edges Only"
+        },
+        {
+            "title": "Ub",
+            "caseConfiguration": ["g", "g", "g", "r", "b", "r", "b", "o", "b", "o", "r", "o"],
+            "arrows": [
+                [4, 6, false], [6, 8, false], [8, 4, false]
+            ],
+            "algorithm": "M2 U' M U2 M' U' M2",
+            "notes": "Edges Only"
+        },
+        {
+            "title": "Z",
+            "caseConfiguration": ["r", "b", "r", "b", "r", "b", "o", "g", "o", "g", "o", "g"],
+            "arrows": [
+                [2, 6, true], [4, 8, true]
+            ],
+            "algorithm": "M' U M2 U M2 U M' U2 M2",
+            "notes": "Edges Only"
         }
     ]
 }
