@@ -15,46 +15,44 @@ class AlgorithmCard extends StatelessWidget {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
-        child: Expanded(
-          child: Row(
-            children: [
-              SizedBox(
-                height: 80,
-                child: isOLL
-                    ? OLLCaseIcon(caseConfiguration: algorithm.caseConfiguration)
-                    : PLLCaseIcon(
-                        caseConfiguration: algorithm.caseConfiguration,
-                        arrows: algorithm.arrows,
-                      ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      algorithm.title,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold, // TODO: noch bolder
-                      ),
+        child: Row(
+          children: [
+            SizedBox(
+              height: 80,
+              child: isOLL
+                  ? OLLCaseIcon(caseConfiguration: algorithm.caseConfiguration)
+                  : PLLCaseIcon(
+                      caseConfiguration: algorithm.caseConfiguration,
+                      arrows: algorithm.arrows,
                     ),
-                    Text(
-                      algorithm.algorithm,
-                      style: const TextStyle(
-                        fontSize: 19,
-                      ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    algorithm.title,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold, // TODO: noch bolder
                     ),
-                    algorithm.notes != null
-                        ? Text(
-                            algorithm.notes!,
-                          )
-                        : const SizedBox(),
-                  ],
-                ),
+                  ),
+                  Text(
+                    algorithm.algorithm,
+                    style: const TextStyle(
+                      fontSize: 19,
+                    ),
+                  ),
+                  algorithm.notes != null
+                      ? Text(
+                          algorithm.notes!,
+                        )
+                      : const SizedBox(),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
