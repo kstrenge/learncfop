@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:widget_arrows/widget_arrows.dart';
 
+import 'rubik_arrow_element.dart';
+
 class PLLCaseIcon extends StatelessWidget {
   final List<String> caseConfiguration;
   final List<List> arrows;
@@ -30,7 +32,7 @@ class PLLCaseIcon extends StatelessWidget {
       }
     }
 
-    // draw arrows:
+    // configure arrows:
     String? targetId1;
     String? targetId2;
     String? targetId3;
@@ -50,6 +52,9 @@ class PLLCaseIcon extends StatelessWidget {
     bool isDoubleSided7 = false;
     bool isDoubleSided8 = false;
     bool isDoubleSided9 = false;
+
+    // draw arrows:
+    // to configure arrow style go to "rubik_arrow_element.dart"
 
     for (var arrow in arrows) {
       switch (arrow[0]) {
@@ -129,32 +134,23 @@ class PLLCaseIcon extends StatelessWidget {
                     Expanded(flex: 1, child: Container(color: Colors.black)),
                     Expanded(flex: 3, child: Container(color: sideColors[11])),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "1",
                       targetId: targetId1,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided1,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "2",
                       targetId: targetId2,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided2,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "3",
                       targetId: targetId3,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided3,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
@@ -172,32 +168,23 @@ class PLLCaseIcon extends StatelessWidget {
                     Expanded(flex: 1, child: Container(color: Colors.black)),
                     Expanded(flex: 3, child: Container(color: sideColors[10])),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "4",
                       targetId: targetId4,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided4,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "5",
                       targetId: targetId5,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided5,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "6",
                       targetId: targetId6,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided6,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
@@ -215,32 +202,23 @@ class PLLCaseIcon extends StatelessWidget {
                     Expanded(flex: 1, child: Container(color: Colors.black)),
                     Expanded(flex: 3, child: Container(color: sideColors[9])),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "7",
                       targetId: targetId7,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided7,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "8",
                       targetId: targetId8,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided8,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    ArrowElement(
+                    RubikArrowElement(
                       id: "9",
                       targetId: targetId9,
-                      color: Colors.black,
-                      sourceAnchor: Alignment.center,
-                      targetAnchor: Alignment.center,
                       doubleSided: isDoubleSided9,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
