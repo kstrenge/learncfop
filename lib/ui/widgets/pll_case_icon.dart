@@ -3,7 +3,7 @@ import 'package:widget_arrows/widget_arrows.dart';
 
 class PLLCaseIcon extends StatelessWidget {
   final List<String> caseConfiguration;
-  final List arrows;
+  final List<List> arrows;
 
   const PLLCaseIcon({
     required this.caseConfiguration,

@@ -32,7 +32,7 @@ class OLLAlgorithm extends Algorithm {
 
 class PLLAlgorithm extends Algorithm {
   final List<String> caseConfiguration;
-  final List arrows; // TODO: Warum nicht List<List>!?
+  final List<List> arrows;
 
   PLLAlgorithm({
     required super.title,
