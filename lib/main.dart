@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
-import 'ui/pages/oll.dart';
 import 'ui/pages/oll2look.dart';
+import 'ui/pages/oll.dart';
+import 'ui/pages/pll2look.dart';
 import 'ui/pages/pll.dart';
 
 void main() {
@@ -27,7 +27,7 @@ class _RubikAppState extends State<RubikApp> {
       debugShowCheckedModeBanner: false,
       theme: theme(context),
       home: Scaffold(
-        body: [const Home(), const OLL2Look(), const OLL(), const PLL()][currentPageIndex],
+        body: [const Home(), const OLL2Look(), const OLL(), const PLL2Look(), const PLL()][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) => setState(() => currentPageIndex = index),
           selectedIndex: currentPageIndex,
@@ -38,15 +38,25 @@ class _RubikAppState extends State<RubikApp> {
               label: "Home",
             ),
             NavigationDestination(
-              icon: Icon(Symbols.keyboard_double_arrow_up),
+              icon: Icon(Icons.keyboard_double_arrow_up),
               label: "OLL2Look",
             ),
             NavigationDestination(
-              icon: Icon(Symbols.keyboard_arrow_up),
+              icon: Icon(Icons.keyboard_arrow_up),
               label: "OLL",
             ),
             NavigationDestination(
-              icon: Icon(Symbols.cycle),
+              icon: Icon(
+                Icons.sync,
+                size: 22,
+              ),
+              label: "PLL2Look",
+            ),
+            NavigationDestination(
+              icon: Icon(
+                Icons.replay,
+                size: 22,
+              ),
               label: "PLL",
             ),
           ],

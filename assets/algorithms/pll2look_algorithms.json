@@ -1,0 +1,58 @@
+{
+    "PLL2Look": [
+        {
+            "title": "Diagonal",
+            "caseConfiguration": ["b", "a", "g", "r", "a", "o", "g", "a", "b", "o", "a", "r"],
+            "arrows": [
+                [1, 9, true]
+            ],
+            "algorithm": "F R U' R' U' R U R' F' R U R' U' R' F R F'",
+            "notes": "1: Corners"
+        },
+        {
+            "title": "Headlights",
+            "caseConfiguration": ["g", "a", "r", "b", "a", "g", "r", "a", "b", "o", "a", "o"],
+            "arrows": [
+                [3, 9, true]
+            ],
+            "algorithm": "R U R' U' R' F R2 U' R' U' R U R' F'",
+            "notes": "1: Corners"
+        },
+        {
+            "title": "PLL (H)",
+            "caseConfiguration": ["g", "b", "g", "r", "o", "r", "b", "g", "b", "o", "r", "o"],
+            "arrows": [
+                [2, 8, true], [4, 6, true]
+            ],
+            "algorithm": "M2 U M2 U2 M2 U M2",
+            "notes": "2: Edges"
+        },
+        {
+            "title": "PLL (Ua)",
+            "caseConfiguration": ["g", "g", "g", "r", "o", "r", "b", "r", "b", "o", "b", "o"],
+            "arrows": [
+                [6, 4, false], [4, 8, false], [8, 6, false]
+            ],
+            "algorithm": "M2 U M U2 M' U M2",
+            "notes": "2: Edges"
+        },
+        {
+            "title": "PLL (Ub)",
+            "caseConfiguration": ["g", "g", "g", "r", "b", "r", "b", "o", "b", "o", "r", "o"],
+            "arrows": [
+                [4, 6, false], [6, 8, false], [8, 4, false]
+            ],
+            "algorithm": "M2 U' M U2 M' U' M2",
+            "notes": "2: Edges"
+        },
+        {
+            "title": "PLL (Z)",
+            "caseConfiguration": ["r", "b", "r", "b", "r", "b", "o", "g", "o", "g", "o", "g"],
+            "arrows": [
+                [2, 6, true], [4, 8, true]
+            ],
+            "algorithm": "M' U M2 U M2 U M' U2 M2",
+            "notes": "2: Edges"
+        }
+    ]
+}
