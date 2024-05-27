@@ -24,6 +24,9 @@ class RubikArrowElement extends StatelessWidget {
     return ArrowElement(
       id: id,
       targetId: targetId,
+      bow: 0,
+      stretch: 0,
+      straights: true,
       color: Colors.black,
       width: 2.5,
       tipLength: 7,
