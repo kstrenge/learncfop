@@ -22,9 +22,8 @@ class PLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text("Instant Permutation of Last Layer"),
-        ),
+        title: const Text("Instant Permutation of Last Layer"),
+        centerTitle: true,
       ),
       body: FutureBuilder(
         future: loadAlgorithms(),
