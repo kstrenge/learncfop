@@ -7,7 +7,16 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Rubik App")),
-      body: const Center(child: Text("Home")),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: Text(
+            "WELCOME TO RUBIK, \n YOUR SPEEDCUBE MEMORY AID",
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+        ),
+      ),
     );
   }
 }

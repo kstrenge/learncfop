@@ -2,11 +2,21 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:google_fonts/google_fonts.dart";
 
-ThemeData theme(BuildContext context) {
+ThemeData lightTheme(BuildContext context) {
   return ThemeData(
     useMaterial3: true,
+    brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-    textTheme: GoogleFonts.orbitronTextTheme(Theme.of(context).textTheme),
+    fontFamily: GoogleFonts.orbitron().fontFamily,
+  );
+}
+
+ThemeData darkTheme(BuildContext context) {
+  return ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.dark,
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.green, brightness: Brightness.dark),
+    fontFamily: GoogleFonts.orbitron().fontFamily,
   );
 }
 

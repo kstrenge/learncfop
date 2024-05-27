@@ -21,11 +21,13 @@ class RubikApp extends StatefulWidget {
 
 class _RubikAppState extends State<RubikApp> {
   int currentPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme(context),
+      theme: lightTheme(context),
+      darkTheme: darkTheme(context),
       home: Scaffold(
         body: [const Home(), const OLL2Look(), const OLL(), const PLL2Look(), const PLL()][currentPageIndex],
         bottomNavigationBar: NavigationBar(
