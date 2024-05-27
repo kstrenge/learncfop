@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rubik/ui/widgets/pll_case_icon.dart';
 
 import '../../data/algorithm.dart';
 import 'oll_case_icon.dart';
+import 'pll_case_icon.dart';
 
 class AlgorithmCard extends StatelessWidget {
   final dynamic algorithm;
@@ -32,22 +33,24 @@ class AlgorithmCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    algorithm.title,
-                    style: GoogleFonts.orbitron(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w900,
-                    ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          algorithm.title,
+                          style: Theme.of(context).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                    ],
                   ),
                   Text(
                     algorithm.algorithm,
-                    style: const TextStyle(
-                      fontSize: 19,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(),
                   ),
                   algorithm.notes != null
                       ? Text(
                           algorithm.notes!,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         )
                       : const SizedBox(),
                 ],
