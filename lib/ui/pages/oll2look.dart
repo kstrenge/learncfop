@@ -33,7 +33,27 @@ class OLL2Look extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                return AlgorithmCard.oll(snapshot.data![index]);
+                if (index == 0) {
+                  return Column(
+                    children: [
+                      const Text("Step 1: Corners"),
+                      const SizedBox(height: 8),
+                      AlgorithmCard.oll(snapshot.data![index]),
+                    ],
+                  );
+                }
+                if (index == 3) {
+                  return Column(
+                    children: [
+                      const SizedBox(height: 8),
+                      const Text("Step 2: Edges"),
+                      const SizedBox(height: 8),
+                      AlgorithmCard.oll(snapshot.data![index]),
+                    ],
+                  );
+                } else {
+                  return AlgorithmCard.oll(snapshot.data![index]);
+                }
               },
             );
           }
