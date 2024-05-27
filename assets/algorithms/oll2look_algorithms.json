@@ -54,7 +54,7 @@
             "title": "Fish back",
             "caseConfiguration": [4, 6, 7, 10, 11, 12, 16, 18, 19],
             "algorithm": "R U2 R' U' R, U' R'",
-            "notes": "Fish fron algorithm just backwards"
+            "notes": "Fish front algorithm just backwards"
         }
     ]
 }
