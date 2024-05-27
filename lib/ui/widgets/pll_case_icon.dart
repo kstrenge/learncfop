@@ -28,7 +28,7 @@ class PLLCaseIcon extends StatelessWidget {
         case ("o"):
           sideColors.add(Colors.orange);
         default:
-          throw Error();
+          sideColors.add(const Color.fromRGBO(100, 100, 100, 1));
       }
     }
 
