@@ -26,7 +26,7 @@ makeSystemNavigationTransparent() {
     const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent,
       systemNavigationBarDividerColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.dark,
+      systemNavigationBarIconBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.dark,
       systemStatusBarContrastEnforced: false,
     ),
