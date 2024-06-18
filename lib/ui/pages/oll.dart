@@ -22,7 +22,7 @@ class OLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Instant Orientation of Last Layer"),
+        title: const FittedBox(child: Text("Instant Orientation of Last Layer")),
         centerTitle: true,
       ),
       body: FutureBuilder(

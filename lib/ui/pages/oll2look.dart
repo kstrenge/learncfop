@@ -22,7 +22,7 @@ class OLL2Look extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Orientation of Last Layer 2 steps"),
+        title: const FittedBox(child: Text("Orientation of Last Layer 2 steps")),
         centerTitle: true,
       ),
       body: FutureBuilder(
