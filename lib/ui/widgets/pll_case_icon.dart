@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widget_arrows/widget_arrows.dart';
 
-import 'rubik_arrow_element.dart';
+import 'cfop_arrow_element.dart';
 
 class PLLCaseIcon extends StatelessWidget {
   final List<String> caseConfiguration;
@@ -54,7 +54,7 @@ class PLLCaseIcon extends StatelessWidget {
     bool isDoubleSided9 = false;
 
     // draw arrows:
-    // to configure arrow style go to "rubik_arrow_element.dart"
+    // to configure arrow style go to "cfop_arrow_element.dart"
 
     for (var arrow in arrows) {
       switch (arrow[0]) {
@@ -134,21 +134,21 @@ class PLLCaseIcon extends StatelessWidget {
                     Expanded(flex: 1, child: Container(color: Colors.black)),
                     Expanded(flex: 3, child: Container(color: sideColors[11])),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "1",
                       targetId: targetId1,
                       doubleSided: isDoubleSided1,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "2",
                       targetId: targetId2,
                       doubleSided: isDoubleSided2,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "3",
                       targetId: targetId3,
                       doubleSided: isDoubleSided3,
@@ -168,21 +168,21 @@ class PLLCaseIcon extends StatelessWidget {
                     Expanded(flex: 1, child: Container(color: Colors.black)),
                     Expanded(flex: 3, child: Container(color: sideColors[10])),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "4",
                       targetId: targetId4,
                       doubleSided: isDoubleSided4,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "5",
                       targetId: targetId5,
                       doubleSided: isDoubleSided5,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "6",
                       targetId: targetId6,
                       doubleSided: isDoubleSided6,
@@ -202,21 +202,21 @@ class PLLCaseIcon extends StatelessWidget {
                     Expanded(flex: 1, child: Container(color: Colors.black)),
                     Expanded(flex: 3, child: Container(color: sideColors[9])),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "7",
                       targetId: targetId7,
                       doubleSided: isDoubleSided7,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "8",
                       targetId: targetId8,
                       doubleSided: isDoubleSided8,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(flex: 1, child: Container(color: Colors.black)),
-                    RubikArrowElement(
+                    CFOPArrowElement(
                       id: "9",
                       targetId: targetId9,
                       doubleSided: isDoubleSided9,

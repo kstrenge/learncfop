@@ -1,4 +1,4 @@
-package com.example.rubik
+package xyz.koncode.learncfop
 
 import io.flutter.embedding.android.FlutterActivity
 

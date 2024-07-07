@@ -9,17 +9,17 @@ import 'ui/pages/pll.dart';
 
 void main() {
   makeSystemNavigationTransparent();
-  runApp(const RubikApp());
+  runApp(const LearnCFOPApp());
 }
 
-class RubikApp extends StatefulWidget {
-  const RubikApp({super.key});
+class LearnCFOPApp extends StatefulWidget {
+  const LearnCFOPApp({super.key});
 
   @override
-  State<RubikApp> createState() => _RubikAppState();
+  State<LearnCFOPApp> createState() => _LearnCFOPAppState();
 }
 
-class _RubikAppState extends State<RubikApp> {
+class _LearnCFOPAppState extends State<LearnCFOPApp> {
   int currentPageIndex = 0;
 
   @override

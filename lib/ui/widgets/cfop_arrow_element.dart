@@ -4,13 +4,13 @@ import 'package:widget_arrows/widget_arrows.dart';
 
 // used to create the arrows for OLL case icon, spares code:
 
-class RubikArrowElement extends StatelessWidget {
+class CFOPArrowElement extends StatelessWidget {
   final String id;
   final String? targetId;
   final bool doubleSided;
   final Widget child;
 
-  const RubikArrowElement({
+  const CFOPArrowElement({
     required this.id,
     required this.targetId,
     required this.doubleSided,

@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Rubik App"),
+        title: const Text("Learn CFOP App"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -18,7 +18,8 @@ class Home extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const SizedBox(height: 32),
-                Text("WELCOME TO RUBIK, \n YOUR SPEEDCUBE MEMORY AID", textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineLarge),
+                Text("WELCOME TO LEARN CFOP, \n YOUR SPEEDCUBE MEMORY AID",
+                    textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineLarge),
                 const SizedBox(height: 16),
                 ClipRect(
                   child: Align(

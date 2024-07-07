@@ -1,3 +1,3 @@
-# RUBIK APP
+# LEARN CFOP APP
 
-Welcome to Rubik, your speedcube memory aid!
+Welcome to Learn CFOP, your speedcube memory aid!
