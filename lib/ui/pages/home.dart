@@ -19,7 +19,8 @@ class Home extends StatelessWidget {
               children: [
                 const SizedBox(height: 32),
                 Text("WELCOME TO LEARN CFOP, \n YOUR SPEEDCUBE MEMORY AID",
-                    textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineLarge),
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headlineLarge),
                 const SizedBox(height: 16),
                 ClipRect(
                   child: Align(
@@ -47,7 +48,8 @@ class Home extends StatelessWidget {
                   icon: const Icon(Icons.open_in_browser),
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const LicensePage()),
+                      MaterialPageRoute(
+                          builder: (context) => const LicensePage()),
                     );
                   },
                 ),

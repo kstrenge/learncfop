@@ -6,7 +6,8 @@ import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
 Future<List<PLLAlgorithm>> loadAlgorithms() async {
-  final rawJson = await rootBundle.loadString("assets/algorithms/pll_algorithms.json");
+  final rawJson =
+      await rootBundle.loadString("assets/algorithms/pll_algorithms.json");
   Map<String, dynamic> data = jsonDecode(rawJson);
   List<PLLAlgorithm> algorithmList = [];
   for (Map<String, dynamic> jsonAlgorithm in data["PLL"]) {
@@ -22,7 +23,8 @@ class PLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const FittedBox(child: Text("Instant Permutation of Last Layer")),
+        title:
+            const FittedBox(child: Text("Instant Permutation of Last Layer")),
         centerTitle: true,
       ),
       body: FutureBuilder(

@@ -7,8 +7,10 @@ import 'pll_case_icon.dart';
 class AlgorithmCard extends StatelessWidget {
   final dynamic algorithm;
   final bool isOLL;
-  const AlgorithmCard.oll(OLLAlgorithm this.algorithm, {this.isOLL = true, super.key});
-  const AlgorithmCard.pll(PLLAlgorithm this.algorithm, {this.isOLL = false, super.key});
+  const AlgorithmCard.oll(OLLAlgorithm this.algorithm,
+      {this.isOLL = true, super.key});
+  const AlgorithmCard.pll(PLLAlgorithm this.algorithm,
+      {this.isOLL = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,10 @@ class AlgorithmCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           algorithm.title,
-                          style: Theme.of(context).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w900),
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelSmall!
+                              .copyWith(fontWeight: FontWeight.w900),
                         ),
                       ),
                     ],

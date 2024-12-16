@@ -15,7 +15,8 @@ ThemeData darkTheme(BuildContext context) {
   return ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.green, brightness: Brightness.dark),
+    colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.green, brightness: Brightness.dark),
     fontFamily: GoogleFonts.orbitron().fontFamily,
   );
 }

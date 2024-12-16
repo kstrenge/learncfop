@@ -29,9 +29,16 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       theme: lightTheme(context),
       darkTheme: darkTheme(context),
       home: Scaffold(
-        body: [const Home(), const OLL2Look(), const OLL(), const PLL2Look(), const PLL()][currentPageIndex],
+        body: [
+          const Home(),
+          const OLL2Look(),
+          const OLL(),
+          const PLL2Look(),
+          const PLL()
+        ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (int index) => setState(() => currentPageIndex = index),
+          onDestinationSelected: (int index) =>
+              setState(() => currentPageIndex = index),
           selectedIndex: currentPageIndex,
           destinations: const [
             NavigationDestination(
@@ -69,6 +76,7 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
 }
 
 void navigateTo(Widget destinationPage, BuildContext context) {
-  final MaterialPageRoute route = MaterialPageRoute(builder: (_) => destinationPage);
+  final MaterialPageRoute route =
+      MaterialPageRoute(builder: (_) => destinationPage);
   Navigator.push(context, route);
 }

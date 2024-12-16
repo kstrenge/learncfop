@@ -6,7 +6,8 @@ import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
 Future<List<OLLAlgorithm>> loadAlgorithms() async {
-  final rawJson = await rootBundle.loadString("assets/algorithms/oll2look_algorithms.json");
+  final rawJson =
+      await rootBundle.loadString("assets/algorithms/oll2look_algorithms.json");
   Map<String, dynamic> data = jsonDecode(rawJson);
   List<OLLAlgorithm> algorithmList = [];
   for (Map<String, dynamic> jsonAlgorithm in data["OLL2Look"]) {
@@ -22,7 +23,8 @@ class OLL2Look extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const FittedBox(child: Text("Orientation of Last Layer 2 steps")),
+        title:
+            const FittedBox(child: Text("Orientation of Last Layer 2 steps")),
         centerTitle: true,
       ),
       body: FutureBuilder(
