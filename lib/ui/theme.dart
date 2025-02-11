@@ -37,3 +37,10 @@ makeSystemNavigationTransparent() {
     overlays: [SystemUiOverlay.top],
   );
 }
+
+ButtonStyle coloredButtonStyle(Color color) {
+  return ButtonStyle(
+    foregroundColor: WidgetStatePropertyAll(color),
+    iconColor: WidgetStatePropertyAll(color),
+  );
+}

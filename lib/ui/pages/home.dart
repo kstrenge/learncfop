@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'info.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -9,6 +11,15 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Learn CFOP App"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Info()),
+            ),
+            icon: const Icon(Icons.info_outlined),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -21,17 +32,7 @@ class Home extends StatelessWidget {
                 Text("WELCOME TO LEARN CFOP, \n YOUR SPEEDCUBE MEMORY AID",
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineLarge),
-                const SizedBox(height: 16),
-                ClipRect(
-                  child: Align(
-                    heightFactor: 0.5,
-                    child: Image.asset(
-                      width: 300,
-                      "assets/icon/icon_foreground.png",
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
+
                 Text(
                   "Find the solving algorithms in the \n tabs at the bottom",
                   textAlign: TextAlign.center,
@@ -40,20 +41,6 @@ class Home extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Icon(Icons.arrow_downward, size: 30),
                 // const Spacer(),
-                const SizedBox(height: 64),
-                const Text("made by koncode"),
-                const SizedBox(height: 16),
-                TextButton.icon(
-                  label: const Text("Open Source Licences"),
-                  icon: const Icon(Icons.open_in_browser),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => const LicensePage()),
-                    );
-                  },
-                ),
-                const SizedBox(height: 16),
               ],
             ),
           ),

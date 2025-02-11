@@ -22,41 +22,37 @@ class OLL2Look extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:
-            const FittedBox(child: Text("Orientation of Last Layer 2 steps")),
-        centerTitle: true,
-      ),
       body: FutureBuilder(
         future: loadAlgorithms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder(
-              padding: const EdgeInsets.all(8),
-              itemCount: snapshot.data!.length,
+            return ListView.separated(
+              padding: const EdgeInsets.all(16),
+              itemCount: snapshot.data!.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("Step 1: Corners"),
-                      const SizedBox(height: 8),
-                      AlgorithmCard.oll(snapshot.data![index]),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 64, bottom: 16),
+                        child: Text(
+                          "Orientation of Last Layer in 2 steps",
+                          style: Theme.of(context).textTheme.headlineLarge,
+                        ),
+                      ),
+                      Text("Step 1 - Corners:"),
                     ],
                   );
-                }
-                if (index == 3) {
-                  return Column(
-                    children: [
-                      const SizedBox(height: 8),
-                      const Text("Step 2: Edges"),
-                      const SizedBox(height: 8),
-                      AlgorithmCard.oll(snapshot.data![index]),
-                    ],
-                  );
+                } else if (index > 0 && index < 4) {
+                  return AlgorithmCard.oll(snapshot.data![index - 1]);
+                } else if (index == 4) {
+                  return const Text("Step 2 - Edges:");
                 } else {
-                  return AlgorithmCard.oll(snapshot.data![index]);
+                  return AlgorithmCard.oll(snapshot.data![index - 2]);
                 }
               },
+              separatorBuilder: (context, index) => SizedBox(height: 16),
             );
           }
           if (snapshot.hasError) {
