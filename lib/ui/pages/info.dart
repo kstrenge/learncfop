@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../theme.dart';
+import '../widgets/easter_egg.dart';
 
 class Info extends StatelessWidget {
   const Info({super.key});
@@ -14,16 +15,7 @@ class Info extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 16),
-          ClipRect(
-            child: Align(
-              heightFactor: 0.5,
-              child: Image.asset(
-                width: 300,
-                "assets/icon/icon_foreground.png",
-              ),
-            ),
-          ),
-          const SizedBox(height: 32),
+          EasterEgg(),
           const SizedBox(height: 64, width: double.infinity),
           const Text("made by koncode"),
           const SizedBox(height: 16),
@@ -42,13 +34,15 @@ class Info extends StatelessWidget {
           TextButton.icon(
             label: const Text("Suggest Feature"),
             icon: const FaIcon(Icons.lightbulb),
-            style: coloredButtonStyle(Theme.of(context).colorScheme.tertiary),
+            style: coloredButtonStyle(Theme.of(context).colorScheme.primary),
             onPressed: () {},
           ),
-          const SizedBox(height: 16),
+          Spacer(),
+          Text("Version 2.0"),
           TextButton.icon(
             label: const Text("Open Source Licences"),
-            icon: const Icon(Icons.open_in_browser),
+            icon: const Icon(Icons.description),
+            style: coloredButtonStyle(Theme.of(context).colorScheme.tertiary),
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const LicensePage()),
