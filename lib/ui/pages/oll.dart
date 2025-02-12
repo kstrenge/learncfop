@@ -22,21 +22,27 @@ class OLL extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:
-            const FittedBox(child: Text("Instant Orientation of Last Layer")),
-        centerTitle: true,
-      ),
       body: FutureBuilder(
         future: loadAlgorithms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder(
-              padding: const EdgeInsets.all(8),
-              itemCount: snapshot.data!.length,
+            return ListView.separated(
+              padding: const EdgeInsets.all(16),
+              itemCount: snapshot.data!.length + 1,
               itemBuilder: (context, index) {
-                return AlgorithmCard.oll(snapshot.data![index]);
+                if (index == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 64, bottom: 16),
+                    child: Text(
+                      "Instant Orientation of Last Layer",
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
+                  );
+                } else {
+                  return AlgorithmCard.oll(snapshot.data![index - 1]);
+                }
               },
+              separatorBuilder: (context, index) => SizedBox(height: 16),
             );
           }
           if (snapshot.hasError) {
