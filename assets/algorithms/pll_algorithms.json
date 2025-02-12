@@ -29,29 +29,37 @@
         },
         {
             "title": "Ga",
-            "caseConfiguration": ["g", "b", "r", "b", "r", "g", "r", "g", "b", "o", "g", "o"],
-            "arrows": [],
+            "caseConfiguration": ["g", "b", "r", "b", "o", "g", "r", "r", "b", "o", "g", "o"],
+            "arrows": [
+                [4, 6, false], [6, 2, false], [2, 4, false], [1, 3, false], [3, 7, false], [7, 1, false]
+            ],
             "algorithm": "R2 U R' U R' U' R U' R2 U' D R' U R D'",
             "notes": "Adjacent Corner Swap"
         },
         {
             "title": "Gb",
             "caseConfiguration": ["g", "o", "r", "b", "b", "g", "r", "g", "b", "o", "r", "o"],
-            "arrows": [],
+            "arrows": [
+                [1, 7, false], [7, 9, false], [9, 1, false], [2, 8, false], [8, 4, false], [4, 2, false]
+            ],
             "algorithm": "R' U' R U D' R2 U R' U R U' R U' R2 D",
             "notes": "Adjacent Corner Swap"
         },
         {
             "title": "Gc",
             "caseConfiguration": ["g", "r", "r", "b", "o", "r", "r", "g", "b", "o", "b", "o"],
-            "arrows": [],
+            "arrows": [
+                [1, 7, false], [7, 9, false], [9, 1, false], [4, 6, false], [6, 8, false], [8, 4, false]
+            ],
             "algorithm": "R2 U' R U' R U R' U R2 U D' R U' R' D",
             "notes": "Adjacent Corner Swap"
         },
         {
             "title": "Gd",
             "caseConfiguration": ["g", "b", "r", "b", "g", "g", "r", "o", "b", "o", "r", "o"],
-            "arrows": [],
+            "arrows": [
+                [1, 3, false], [3, 7, false], [7, 1, false], [2, 4, false], [4, 8, false], [8, 2, false]
+            ],
             "algorithm": "R U R' U' D R2 U' R U' R' U R' U R2 D'",
             "notes": "Adjacent Corner Swap"
         },
