@@ -1,7 +1,8 @@
 {
-    "PLL2Look": [
+    "pll2look": [
         {
-            "title": "Diagonal",
+            "id": "pll2look-0",
+            "label": "Diagonal",
             "caseConfiguration": ["b", "a", "g", "r", "a", "o", "g", "a", "b", "o", "a", "r"],
             "arrows": [
                 [1, 9, true]
@@ -10,7 +11,8 @@
             "notes": "1: Corners"
         },
         {
-            "title": "Headlights",
+            "id": "pll2look-1",
+            "label": "Headlights",
             "caseConfiguration": ["g", "a", "r", "b", "a", "g", "r", "a", "b", "o", "a", "o"],
             "arrows": [
                 [3, 9, true]
@@ -19,7 +21,8 @@
             "notes": "1: Corners"
         },
         {
-            "title": "PLL (H)",
+            "id": "pll2look-2",
+            "label": "PLL (H)",
             "caseConfiguration": ["g", "b", "g", "r", "o", "r", "b", "g", "b", "o", "r", "o"],
             "arrows": [
                 [2, 8, true], [4, 6, true]
@@ -28,7 +31,8 @@
             "notes": "2: Edges"
         },
         {
-            "title": "PLL (Ua)",
+            "id": "pll2look-3",
+            "label": "PLL (Ua)",
             "caseConfiguration": ["g", "g", "g", "r", "o", "r", "b", "r", "b", "o", "b", "o"],
             "arrows": [
                 [6, 4, false], [4, 8, false], [8, 6, false]
@@ -37,7 +41,8 @@
             "notes": "2: Edges"
         },
         {
-            "title": "PLL (Ub)",
+            "id": "pll2look-4",
+            "label": "PLL (Ub)",
             "caseConfiguration": ["g", "g", "g", "r", "b", "r", "b", "o", "b", "o", "r", "o"],
             "arrows": [
                 [4, 6, false], [6, 8, false], [8, 4, false]
@@ -46,7 +51,8 @@
             "notes": "2: Edges"
         },
         {
-            "title": "PLL (Z)",
+            "id": "pll2look-5",
+            "label": "PLL (Z)",
             "caseConfiguration": ["r", "b", "r", "b", "r", "b", "o", "g", "o", "g", "o", "g"],
             "arrows": [
                 [2, 6, true], [4, 8, true]

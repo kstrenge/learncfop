@@ -1,7 +1,8 @@
 {
-    "PLL": [
+    "pll": [
         {
-            "title": "Aa",
+            "id": "pll-0",
+            "label": "Aa",
             "caseConfiguration": ["r", "g", "b", "o", "r", "r", "b", "b", "o", "g", "o", "g"],
             "arrows": [
                 [1, 3, false], [3, 7, false], [7, 1, false]
@@ -10,7 +11,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Ab",
+            "id": "pll-1",
+            "label": "Ab",
             "caseConfiguration": ["o", "g", "g", "r", "r", "o", "g", "b", "r", "o", "o", "o"],
             "arrows": [
                 [9, 1, false], [1, 7, false], [7, 9, false]
@@ -19,7 +21,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "F",
+            "id": "pll-2",
+            "label": "F",
             "caseConfiguration": ["g", "b", "r", "b", "r", "g", "r", "g", "b", "o", "o", "o"],
             "arrows": [
                 [2, 8, true], [3, 9, true]
@@ -28,7 +31,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Ga",
+            "id": "pll-3",
+            "label": "Ga",
             "caseConfiguration": ["g", "b", "r", "b", "o", "g", "r", "r", "b", "o", "g", "o"],
             "arrows": [
                 [4, 6, false], [6, 2, false], [2, 4, false], [1, 3, false], [3, 7, false], [7, 1, false]
@@ -37,7 +41,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Gb",
+            "id": "pll-4",
+            "label": "Gb",
             "caseConfiguration": ["g", "o", "r", "b", "b", "g", "r", "g", "b", "o", "r", "o"],
             "arrows": [
                 [1, 7, false], [7, 9, false], [9, 1, false], [2, 8, false], [8, 4, false], [4, 2, false]
@@ -46,7 +51,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Gc",
+            "id": "pll-5",
+            "label": "Gc",
             "caseConfiguration": ["g", "r", "r", "b", "o", "r", "r", "g", "b", "o", "b", "o"],
             "arrows": [
                 [1, 7, false], [7, 9, false], [9, 1, false], [4, 6, false], [6, 8, false], [8, 4, false]
@@ -55,7 +61,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Gd",
+            "id": "pll-6",
+            "label": "Gd",
             "caseConfiguration": ["g", "b", "r", "b", "g", "g", "r", "o", "b", "o", "r", "o"],
             "arrows": [
                 [1, 3, false], [3, 7, false], [7, 1, false], [2, 4, false], [4, 8, false], [8, 2, false]
@@ -64,7 +71,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Ja",
+            "id": "pll-7",
+            "label": "Ja",
             "caseConfiguration": ["g", "r", "r", "b", "g", "g", "r", "b", "b", "o", "o", "o"],
             "arrows": [
                 [2, 6, true], [3, 9, true]
@@ -73,7 +81,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Jb",
+            "id": "pll-8",
+            "label": "Jb",
             "caseConfiguration": ["r", "r", "b", "o", "o", "r", "b", "b", "o", "g", "g", "g"],
             "arrows": [
                 [3, 9, true], [6, 8, true]
@@ -82,7 +91,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Ra",
+            "id": "pll-9",
+            "label": "Ra",
             "caseConfiguration": ["r", "g", "b", "o", "b", "r", "b", 
             "o", "o", "g", "r", "g"],
             "arrows": [
@@ -92,7 +102,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "Rb",
+            "id": "pll-10",
+            "label": "Rb",
             "caseConfiguration": ["o", "o", "g", "r", "g", "o", "g", "b", "r", "b", "r", "b"],
             "arrows": [
                 [3, 9, true], [4, 8, true]
@@ -101,7 +112,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "T",
+            "id": "pll-11",
+            "label": "T",
             "caseConfiguration": ["g", "g", "r", "b", "o", "g", "r", "b", "b", "o", "r", "o"],
             "arrows": [
                 [3, 9, true], [4, 6, true]
@@ -110,7 +122,8 @@
             "notes": "Adjacent Corner Swap"
         },
         {
-            "title": "E",
+            "id": "pll-12",
+            "label": "E",
             "caseConfiguration": ["o", "g", "r", "b", "r", "g", "r", "b", "o", "g", "o", "b"],
             "arrows": [
                 [1, 7, true], [3, 9, true]
@@ -119,7 +132,8 @@
             "notes": "Diagonal Corner Swap"
         },
         {
-            "title": "Na",
+            "id": "pll-13",
+            "label": "Na",
             "caseConfiguration": ["g", "g", "b", "o", "o", "r", "b", "b", "g", "r", "r", "o"],
             "arrows": [
                 [3, 7, true], [4, 6, true]
@@ -128,7 +142,8 @@
             "notes": "Diagonal Corner Swap"
         },
         {
-            "title": "Nb",
+            "id": "pll-14",
+            "label": "Nb",
             "caseConfiguration": ["b", "g", "g", "r", "o", "o", "g", "b", "b", "o", "r", "r"],
             "arrows": [
                 [1, 9, true], [4, 6, true]
@@ -137,7 +152,8 @@
             "notes": "Diagonal Corner Swap"
         },
         {
-            "title": "V",
+            "id": "pll-15",
+            "label": "V",
             "caseConfiguration": ["b", "r", "g", "r", "g", "o", "g", "b", "b", "o", "g", "r"],
             "arrows": [
                 [2, 6, true], [1, 9, true]
@@ -146,7 +162,8 @@
             "notes": "Diagonal Corner Swap"
         },
         {
-            "title": "Y",
+            "id": "pll-16",
+            "label": "Y",
             "caseConfiguration": ["b", "o", "g", "r", "r", "o", "g", "b", "b", "o", "g", "r"],
             "arrows": [
                 [1, 9, true], [4, 2, true]
@@ -155,7 +172,8 @@
             "notes": "Diagonal Corner Swap"
         },
         {
-            "title": "H",
+            "id": "pll-17",
+            "label": "H",
             "caseConfiguration": ["g", "b", "g", "r", "o", "r", "b", "g", "b", "o", "r", "o"],
             "arrows": [
                 [2, 8, true], [4, 6, true]
@@ -164,7 +182,8 @@
             "notes": "Edges Only"
         },
         {
-            "title": "Ua",
+            "id": "pll-18",
+            "label": "Ua",
             "caseConfiguration": ["g", "g", "g", "r", "o", "r", "b", "r", "b", "o", "b", "o"],
             "arrows": [
                 [6, 4, false], [4, 8, false], [8, 6, false]
@@ -173,7 +192,8 @@
             "notes": "Edges Only"
         },
         {
-            "title": "Ub",
+            "id": "pll-19",
+            "label": "Ub",
             "caseConfiguration": ["g", "g", "g", "r", "b", "r", "b", "o", "b", "o", "r", "o"],
             "arrows": [
                 [4, 6, false], [6, 8, false], [8, 4, false]
@@ -182,7 +202,8 @@
             "notes": "Edges Only"
         },
         {
-            "title": "Z",
+            "id": "pll-20",
+            "label": "Z",
             "caseConfiguration": ["r", "b", "r", "b", "r", "b", "o", "g", "o", "g", "o", "g"],
             "arrows": [
                 [2, 6, true], [4, 8, true]

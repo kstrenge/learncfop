@@ -1,344 +1,344 @@
 {
-    "OLL": [
+    "oll": [
         {
-            "id": 1,
-            "title": "Dot",
+            "id": "oll-0",
+            "label": "Dot",
             "caseConfiguration": [2, 4, 8, 9, 11, 13, 14, 18, 20],
             "algorithm": "R U2 R2 F R F' U2 R' F R F'"
         },
         {
-            "id": 2,
-            "title": "Dot",
+            "id": "oll-1",
+            "label": "Dot",
             "caseConfiguration": [1, 2, 3, 9, 11, 13, 14, 18, 20],
             "algorithm": "r U r' U2 r U2 R' U2 R U' r'"
         },
         {
-            "id": 3,
-            "title": "Dot",
+            "id": "oll-2",
+            "label": "Dot",
             "caseConfiguration": [1, 2, 8, 9, 11, 13, 15, 20, 21],
             "algorithm": "r' R2 U R' U r U2 r' U M'"
         },
         {
-            "id": 4,
-            "title": "Dot",
+            "id": "oll-3",
+            "label": "Dot",
             "caseConfiguration": [2, 3, 4, 9, 11, 13, 17, 19, 20],
             "algorithm": "M U' r U2 r' U' R U' R' M'"
         },
         {
-            "id": 5,
-            "title": "Square Shape",
+            "id": "oll-4",
+            "label": "Square Shape",
             "caseConfiguration": [5, 6, 8, 10, 11, 13, 14, 20, 21],
             "algorithm": "l' U2 L U L' U l"
         },
         {
-            "id": 6,
-            "title": "Square Shape",
+            "id": "oll-5",
+            "label": "Square Shape",
             "caseConfiguration": [4, 6, 7, 9, 11, 12, 18, 19, 20],
             "algorithm": "r U2 R' U' R U' r'"
         },
         {
-            "id": 7,
-            "title": "Small Lightning Bolt",
+            "id": "oll-6",
+            "label": "Small Lightning Bolt",
             "caseConfiguration": [1, 6, 8, 10, 11, 13, 15, 20, 21],
             "algorithm": "r U R' U R U2 r'"
         },
         {
-            "id": 8,
-            "title": "Small Lightning Bolt",
+            "id": "oll-7",
+            "label": "Small Lightning Bolt",
             "caseConfiguration": [3, 4, 6, 9, 11, 12, 17, 19, 20],
             "algorithm": "l' U' L U' L' U2 l"
         },
         {
-            "id": 9,
-            "title": "Fish Shape",
+            "id": "oll-8",
+            "label": "Fish Shape",
             "caseConfiguration": [3, 4, 6, 10, 11, 13, 17, 19, 20],
             "algorithm": "R U R' U' R' F R2 U R' U' F'"
         },
         {
-            "id": 10,
-            "title": "Fish Shape",
+            "id": "oll-9",
+            "label": "Fish Shape",
             "caseConfiguration": [1, 2, 7, 10, 11, 13, 14, 16, 21],
             "algorithm": "R U R' U R' F R F' R U2 R'"
         },
         {
-            "id": 11,
-            "title": "Small Lightning Bolt",
+            "id": "oll-10",
+            "label": "Small Lightning Bolt",
             "caseConfiguration": [1, 6, 7, 10, 11, 13, 14, 20, 21],
             "algorithm": "r U R' U R' F R F' R U2 r'"
         },
         {
-            "id": 12,
-            "title": "Small Lightning Bolt",
+            "id": "oll-11",
+            "label": "Small Lightning Bolt",
             "caseConfiguration": [3, 5, 6, 9, 11, 12, 18, 19, 20],
             "algorithm": "M' R' U' R U' R' U2 R U' R r'"
         },
         {
-            "id": 13,
-            "title": "Knight Move Shape",
+            "id": "oll-12",
+            "label": "Knight Move Shape",
             "caseConfiguration": [1, 2, 8, 10, 11, 12, 15, 20, 21],
             "algorithm": "F U R U' R2 F' R U R U' R'"
         },
         {
-            "id": 14,
-            "title": "Knight Move Shape",
+            "id": "oll-13",
+            "label": "Knight Move Shape",
             "caseConfiguration": [2, 3, 4, 10, 11, 12, 17, 19, 20],
             "algorithm": "R' F R U R' F' R F U' F'"
         },
         {
-            "id": 15,
-            "title": "Knight Move Shape",
+            "id": "oll-14",
+            "label": "Knight Move Shape",
             "caseConfiguration": [2, 5, 8, 10, 11, 12, 14, 20, 21],
             "algorithm": "l' U' l L' U' L U l' U l"
         },
         {
-            "id": 16,
-            "title": "Knight Move Shape",
+            "id": "oll-15",
+            "label": "Knight Move Shape",
             "caseConfiguration": [2, 4, 7, 10, 11, 12, 18, 19, 20],
             "algorithm": "r U r' R U R' U' r U' r'"
         },
         {
-            "id": 17,
-            "title": "Dot",
+            "id": "oll-16",
+            "label": "Dot",
             "caseConfiguration": [2, 5, 8, 9, 11, 13, 17, 19, 20],
             "algorithm": "F R' F' R2 r' U R U' R' U' M'"
         },
         {
-            "id": 18,
-            "title": "Dot",
+            "id": "oll-17",
+            "label": "Dot",
             "caseConfiguration": [2, 5, 7, 9, 11, 13, 19, 20, 21],
             "algorithm": "r U R' U R U2 r2 U' R U' R' U2 r"
         },
         {
-            "id": 19,
-            "title": "Dot",
+            "id": "oll-18",
+            "label": "Dot",
             "caseConfiguration": [2, 5, 7, 9, 11, 13, 14, 18, 20],
             "algorithm": "r' R U R U R' U' M' R' F R F'"
         },
         {
-            "id": 20,
-            "title": "Checkerboard",
+            "id": "oll-19",
+            "label": "Checkerboard",
             "caseConfiguration": [2, 5, 7, 9, 11, 13, 15, 17, 20],
             "algorithm": "r U R' U' M2 U R U' R' U' M'"
         },
         {
-            "id": 21,
-            "title": "Cross",
+            "id": "oll-20",
+            "label": "Cross",
             "caseConfiguration": [1, 3, 6, 10, 11, 12, 16, 19, 21],
             "algorithm": "R U2 R' U' R U R' U' R U' R'"
         },
         {
-            "id": 22,
-            "title": "Cross",
+            "id": "oll-21",
+            "label": "Cross",
             "caseConfiguration": [3, 4, 6, 10, 11, 12, 14, 16, 21],
             "algorithm": "R U2 R2 U' R2 U' R2 U2 R"
         },
         {
-            "id": 23,
-            "title": "Cross",
+            "id": "oll-22",
+            "label": "Cross",
             "caseConfiguration": [1, 3, 6, 10, 11, 12, 15, 16, 17],
             "algorithm": "R2 D' R U2 R' D R U2 R"
         },
         {
-            "id": 24,
-            "title": "Cross",
+            "id": "oll-23",
+            "label": "Cross",
             "caseConfiguration": [1, 6, 7, 10, 11, 12, 16, 17, 19],
             "algorithm": "r U R' U' r' F R F'"
         },
         {
-            "id": 25,
-            "title": "Cross",
+            "id": "oll-24",
+            "label": "Cross",
             "caseConfiguration": [4, 6, 7, 10, 11, 12, 15, 16, 21],
             "algorithm": "F' r U R' U' r' F R"
         },
         {
-            "id": 26,
-            "title": "Cross",
+            "id": "oll-25",
+            "label": "Cross",
             "caseConfiguration": [4, 6, 7, 10, 11, 12, 16, 18, 19],
             "algorithm": "R U2 R' U' R U' R'"
         },
         {
-            "id": 27,
-            "title": "Cross",
+            "id": "oll-26",
+            "label": "Cross",
             "caseConfiguration": [1, 6, 8, 10, 11, 12, 15, 16, 21],
             "algorithm": "R U R' U R U2 R'"
         },
         {
-            "id": 28,
-            "title": "Corners Oriented",
+            "id": "oll-27",
+            "label": "Corners Oriented",
             "caseConfiguration": [5, 6, 7, 10, 11, 13, 15, 17, 20],
             "algorithm": "r U R' U' r' R U R U' R'"
         },
         {
-            "id": 29,
-            "title": "Awkward Shape",
+            "id": "oll-28",
+            "label": "Awkward Shape",
             "caseConfiguration": [1, 6, 7, 10, 11, 13, 17, 19, 20],
             "algorithm": "R U R' U' R U' R' F' U' F R U R'"
         },
         {
-            "id": 30,
-            "title": "Awkward Shape",
+            "id": "oll-29",
+            "label": "Awkward Shape",
             "caseConfiguration": [4, 6, 8, 10, 11, 13, 15, 17, 20],
             "algorithm": "F R' F R2 U' R' U' R U R' F2"
         },
         {
-            "id": 31,
-            "title": "P Shape",
+            "id": "oll-30",
+            "label": "P Shape",
             "caseConfiguration": [1, 6, 7, 9, 11, 12, 17, 19, 20],
             "algorithm": "R' U' F U R U' R' F' R"
         },
         {
-            "id": 32,
-            "title": "P Shape",
+            "id": "oll-31",
+            "label": "P Shape",
             "caseConfiguration": [3, 5, 6, 10, 11, 13, 15, 20, 21],
             "algorithm": "L U F' U' L' U L F L'"
         },
         {
-            "id": 33,
-            "title": "T Shape",
+            "id": "oll-32",
+            "label": "T Shape",
             "caseConfiguration": [1, 2, 7, 10, 11, 12, 17, 19, 20],
             "algorithm": "R U R' U' R' F R F'"
         },
         {
-            "id": 34,
-            "title": "C Shape",
+            "id": "oll-33",
+            "label": "C Shape",
             "caseConfiguration": [2, 4, 8, 10, 11, 12, 15, 17, 20],
             "algorithm": "R U R2 U' R' F R U R U' F'"
         },
         {
-            "id": 35,
-            "title": "Fish Shape",
+            "id": "oll-34",
+            "label": "Fish Shape",
             "caseConfiguration": [2, 5, 8, 9, 11, 12, 16, 17, 19],
             "algorithm": "R U2 R2 F R F' R U2 R'"
         },
         {
-            "id": 36,
-            "title": "W Shape",
+            "id": "oll-35",
+            "label": "W Shape",
             "caseConfiguration": [3, 5, 6, 9, 11, 12, 14, 17, 20],
             "algorithm": "L' U' L U' L' U L U L F' L' F"
         },
         {
-            "id": 37,
-            "title": "Fish Shape",
+            "id": "oll-36",
+            "label": "Fish Shape",
             "caseConfiguration": [5, 6, 8, 10, 11, 13, 17, 19, 20],
             "algorithm": "F R' F' R U R U' R'"
         },
         {
-            "id": 38,
-            "title": "W Shape",
+            "id": "oll-37",
+            "label": "W Shape",
             "caseConfiguration": [1, 6, 7, 10, 11, 13, 15, 18, 20],
             "algorithm": "R U R' U R U' R' U' R' F R F'"
         },
         {
-            "id": 39,
-            "title": "Big Lightning Bolt",
+            "id": "oll-38",
+            "label": "Big Lightning Bolt",
             "caseConfiguration": [1, 2, 7, 10, 11, 12, 15, 18, 20],
             "algorithm": "L F' L' U' L U F U' L'"
         },
         {
-            "id": 40,
-            "title": "Big Lightning Bolt",
+            "id": "oll-39",
+            "label": "Big Lightning Bolt",
             "caseConfiguration": [2, 3, 5, 10, 11, 12, 14, 17, 20],
             "algorithm": "R' F R U R' U' F' U R"
         },
         {
-            "id": 41,
-            "title": "Awkward Shape",
+            "id": "oll-40",
+            "label": "Awkward Shape",
             "caseConfiguration": [1, 3, 6, 10, 11, 13, 15, 17, 20],
             "algorithm": "R U R' U R U2 R' F R U R' U' F'"
         },
         {
-            "id": 42,
-            "title": "Awkward Shape",
+            "id": "oll-41",
+            "label": "Awkward Shape",
             "caseConfiguration": [2, 5, 7, 10, 11, 13, 16, 19, 21],
             "algorithm": "R' U' R U' R' U2 R F R U R' U' F'"
         },
         {
-            "id": 43,
-            "title": "P Shape",
+            "id": "oll-42",
+            "label": "P Shape",
             "caseConfiguration": [4, 6, 7, 9, 11, 12, 14, 17, 20],
             "algorithm": "F' U' L' U L F"
         },
         {
-            "id": 44,
-            "title": "P Shape",
+            "id": "oll-43",
+            "label": "P Shape",
             "caseConfiguration": [5, 6, 8, 10, 11, 13, 15, 18, 20],
             "algorithm": "F U R U' R' F'"
         },
         {
-            "id": 45,
-            "title": "T Shape",
+            "id": "oll-44",
+            "label": "T Shape",
             "caseConfiguration": [2, 4, 7, 10, 11, 12, 14, 17, 20],
             "algorithm": "F R U R' U' F'"
         },
         {
-            "id": 46,
-            "title": "C Shape",
+            "id": "oll-45",
+            "label": "C Shape",
             "caseConfiguration": [5, 6, 8, 9, 11, 13, 15, 16, 18],
             "algorithm": "R' U' R' F R F' U R"
         },
         {
-            "id": 47,
-            "title": "Small L Shape",
+            "id": "oll-46",
+            "label": "Small L Shape",
             "caseConfiguration": [1, 6, 8, 9, 11, 12, 18, 19, 20],
             "algorithm": "R' U' R' F R F' R' F R F' U R"
         },
         {
-            "id": 48,
-            "title": "Small L Shape",
+            "id": "oll-47",
+            "label": "Small L Shape",
             "caseConfiguration": [3, 4, 6, 10, 11, 13, 14, 20, 21],
             "algorithm": "F R U R' U' R U R' U' F'"
         },
         {
-            "id": 49,
-            "title": "Small L Shape",
+            "id": "oll-48",
+            "label": "Small L Shape",
             "caseConfiguration": [3, 4, 6, 9, 11, 12, 14, 20, 21],
             "algorithm": "r U' r2 U r2 U r2 U' r"
         },
         {
-            "id": 50,
-            "title": "Small L Shape",
+            "id": "oll-49",
+            "label": "Small L Shape",
             "caseConfiguration": [2, 3, 4, 9, 11, 12, 14, 16, 21],
             "algorithm": "r' U r2 U' r2 U' r2 U r'"
         },
         {
-            "id": 51,
-            "title": "I Shape",
+            "id": "oll-50",
+            "label": "I Shape",
             "caseConfiguration": [1, 2, 8, 10, 11, 12, 18, 19, 20],
             "algorithm": "F U R U' R' U R U' R' F'"
         },
         {
-            "id": 52,
-            "title": "I Shape",
+            "id": "oll-51",
+            "label": "I Shape",
             "caseConfiguration": [1, 6, 8, 9, 11, 13, 16, 18, 19],
             "algorithm": "R U R' U R U' B U' B' R'"
         },
         {
-            "id": 53,
-            "title": "Small L Shape",
+            "id": "oll-52",
+            "label": "Small L Shape",
             "caseConfiguration": [1, 3, 6, 9, 11, 12, 19, 20, 21],
             "algorithm": "l' U2 L U L' U' L U L' U l"
         },
         {
-            "id": 54,
-            "title": "Small L Shape",
+            "id": "oll-53",
+            "label": "Small L Shape",
             "caseConfiguration": [1, 3, 6, 10, 11, 13, 19, 20, 21],
             "algorithm": "r U2 R' U' R U R' U' R U' r'"
         },
         {
-            "id": 55,
-            "title": "I Shape",
+            "id": "oll-54",
+            "label": "I Shape",
             "caseConfiguration": [1, 2, 3, 10, 11, 12, 19, 20, 21],
             "algorithm": "R' F R U R U' R2 F' R2 U' R' U R U R'"
         },
         {
-            "id": 56,
-            "title": "I Shape",
+            "id": "oll-55",
+            "label": "I Shape",
             "caseConfiguration": [2, 4, 8, 10, 11, 12, 14, 18, 20],
             "algorithm": "r' U' r U' R' U R U' R' U R r' U r"
         },
         {
-            "id": 57,
-            "title": "Corners Oriented",
+            "id": "oll-56",
+            "label": "Corners Oriented",
             "caseConfiguration": [2, 5, 7, 10, 11, 12, 15, 17, 20],
             "algorithm": "R U R' U' M' U R U' r'"
         }
