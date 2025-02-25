@@ -14,7 +14,7 @@ class Info extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
           EasterEgg(),
           const SizedBox(height: 64, width: double.infinity),
           const Text("made by koncode"),
