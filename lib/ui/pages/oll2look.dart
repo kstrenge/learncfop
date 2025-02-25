@@ -1,19 +1,18 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+import '../../data/json_storage.dart';
 import '../../data/algorithm.dart';
-import '../widgets/algorithm_card.dart';
+import '../../ui/widgets/algorithm_card.dart';
 
-Future<List<OLLAlgorithm>> loadAlgorithms() async {
-  final rawJson =
-      await rootBundle.loadString("assets/algorithms/oll2look_algorithms.json");
-  Map<String, dynamic> data = jsonDecode(rawJson);
-  List<OLLAlgorithm> algorithmList = [];
-  for (Map<String, dynamic> jsonAlgorithm in data["OLL2Look"]) {
-    algorithmList.add(OLLAlgorithm.fromJson(jsonAlgorithm));
+Future<List<OLLAlgorithm>> loadOLL2LookAlgorithms() async {
+  List<OLLAlgorithm> algorithms = [];
+  for (int i = 0; i < 10; i++) {
+    final Map<String, dynamic>? json = await loadJson("oll2look-$i");
+    if (json != null) {
+      algorithms.add(OLLAlgorithm.fromJson(json));
+    }
   }
-  return algorithmList;
+  return algorithms;
 }
 
 class OLL2Look extends StatelessWidget {
@@ -23,7 +22,7 @@ class OLL2Look extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadAlgorithms(),
+        future: loadOLL2LookAlgorithms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
@@ -45,11 +44,11 @@ class OLL2Look extends StatelessWidget {
                     ],
                   );
                 } else if (index > 0 && index < 4) {
-                  return AlgorithmCard.oll(snapshot.data![index - 1]);
+                  return AlgorithmCard(algorithm: snapshot.data![index - 1]);
                 } else if (index == 4) {
                   return const Text("Step 2 - Edges:");
                 } else {
-                  return AlgorithmCard.oll(snapshot.data![index - 2]);
+                  return AlgorithmCard(algorithm: snapshot.data![index - 2]);
                 }
               },
               separatorBuilder: (context, index) => SizedBox(height: 16),

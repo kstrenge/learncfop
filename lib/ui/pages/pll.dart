@@ -1,19 +1,18 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+import '../../data/json_storage.dart';
 import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
-Future<List<PLLAlgorithm>> loadAlgorithms() async {
-  final rawJson =
-      await rootBundle.loadString("assets/algorithms/pll_algorithms.json");
-  Map<String, dynamic> data = jsonDecode(rawJson);
-  List<PLLAlgorithm> algorithmList = [];
-  for (Map<String, dynamic> jsonAlgorithm in data["PLL"]) {
-    algorithmList.add(PLLAlgorithm.fromJson(jsonAlgorithm));
+Future<List<PLLAlgorithm>> loadPLLAlgorithms() async {
+  List<PLLAlgorithm> algorithms = [];
+  for (int i = 0; i < 21; i++) {
+    final Map<String, dynamic>? json = await loadJson("pll-$i");
+    if (json != null) {
+      algorithms.add(PLLAlgorithm.fromJson(json));
+    }
   }
-  return algorithmList;
+  return algorithms;
 }
 
 class PLL extends StatelessWidget {
@@ -23,7 +22,7 @@ class PLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadAlgorithms(),
+        future: loadPLLAlgorithms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
@@ -39,7 +38,7 @@ class PLL extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return AlgorithmCard.pll(snapshot.data![index - 1]);
+                  return AlgorithmCard(algorithm: snapshot.data![index - 1]);
                 }
               },
               separatorBuilder: (context, index) => SizedBox(height: 16),

@@ -1,19 +1,18 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+import '../../data/json_storage.dart';
 import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
-Future<List<PLLAlgorithm>> loadAlgorithms() async {
-  final rawJson =
-      await rootBundle.loadString("assets/algorithms/pll2look_algorithms.json");
-  Map<String, dynamic> data = jsonDecode(rawJson);
-  List<PLLAlgorithm> algorithmList = [];
-  for (Map<String, dynamic> jsonAlgorithm in data["PLL2Look"]) {
-    algorithmList.add(PLLAlgorithm.fromJson(jsonAlgorithm));
+Future<List<PLLAlgorithm>> loadPLL2LookAlgorithms() async {
+  List<PLLAlgorithm> algorithms = [];
+  for (int i = 0; i < 6; i++) {
+    final Map<String, dynamic>? json = await loadJson("pll2look-$i");
+    if (json != null) {
+      algorithms.add(PLLAlgorithm.fromJson(json));
+    }
   }
-  return algorithmList;
+  return algorithms;
 }
 
 class PLL2Look extends StatelessWidget {
@@ -23,7 +22,7 @@ class PLL2Look extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadAlgorithms(),
+        future: loadPLL2LookAlgorithms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
@@ -45,11 +44,11 @@ class PLL2Look extends StatelessWidget {
                     ],
                   );
                 } else if (index > 0 && index < 3) {
-                  return AlgorithmCard.pll(snapshot.data![index - 1]);
+                  return AlgorithmCard(algorithm: snapshot.data![index - 1]);
                 } else if (index == 3) {
                   return const Text("Step 2 - Edges:");
                 } else {
-                  return AlgorithmCard.pll(snapshot.data![index - 2]);
+                  return AlgorithmCard(algorithm: snapshot.data![index - 2]);
                 }
               },
               separatorBuilder: (context, index) => SizedBox(height: 16),

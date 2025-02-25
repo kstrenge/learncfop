@@ -1,19 +1,18 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+import '../../data/json_storage.dart';
 import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
-Future<List<OLLAlgorithm>> loadAlgorithms() async {
-  final rawJson =
-      await rootBundle.loadString("assets/algorithms/oll_algorithms.json");
-  Map<String, dynamic> data = jsonDecode(rawJson);
-  List<OLLAlgorithm> algorithmList = [];
-  for (Map<String, dynamic> jsonAlgorithm in data["OLL"]) {
-    algorithmList.add(OLLAlgorithm.fromJson(jsonAlgorithm));
+Future<List<OLLAlgorithm>> loadOLLAlgorithms() async {
+  List<OLLAlgorithm> algorithms = [];
+  for (int i = 0; i < 21; i++) {
+    final Map<String, dynamic>? json = await loadJson("oll-$i");
+    if (json != null) {
+      algorithms.add(OLLAlgorithm.fromJson(json));
+    }
   }
-  return algorithmList;
+  return algorithms;
 }
 
 class OLL extends StatelessWidget {
@@ -23,7 +22,7 @@ class OLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadAlgorithms(),
+        future: loadOLLAlgorithms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
@@ -39,7 +38,7 @@ class OLL extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return AlgorithmCard.oll(snapshot.data![index - 1]);
+                  return AlgorithmCard(algorithm: snapshot.data![index - 1]);
                 }
               },
               separatorBuilder: (context, index) => SizedBox(height: 16),
