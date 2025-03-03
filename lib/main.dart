@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'logic/welcome.dart';
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
 import 'ui/pages/oll2look.dart';
@@ -8,7 +9,9 @@ import 'ui/pages/pll2look.dart';
 import 'ui/pages/pll.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
+  welcome();
   runApp(const LearnCFOPApp());
 }
 
@@ -73,10 +76,4 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       ),
     );
   }
-}
-
-void navigateTo(Widget destinationPage, BuildContext context) {
-  final MaterialPageRoute route =
-      MaterialPageRoute(builder: (_) => destinationPage);
-  Navigator.push(context, route);
 }

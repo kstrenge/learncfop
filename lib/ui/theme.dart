@@ -21,8 +21,14 @@ ThemeData darkTheme(BuildContext context) {
   );
 }
 
+ButtonStyle coloredButtonStyle(Color color) {
+  return ButtonStyle(
+    foregroundColor: WidgetStatePropertyAll(color),
+    iconColor: WidgetStatePropertyAll(color),
+  );
+}
+
 makeSystemNavigationTransparent() {
-  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent,
@@ -35,12 +41,5 @@ makeSystemNavigationTransparent() {
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.edgeToEdge,
     overlays: [SystemUiOverlay.top],
-  );
-}
-
-ButtonStyle coloredButtonStyle(Color color) {
-  return ButtonStyle(
-    foregroundColor: WidgetStatePropertyAll(color),
-    iconColor: WidgetStatePropertyAll(color),
   );
 }

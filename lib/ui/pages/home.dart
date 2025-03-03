@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 
-import 'info.dart';
+import '../../data/json_storage.dart';
+import '../../data/algorithm.dart';
+import '../widgets/algorithm_card.dart';
+import '../../ui/pages/info.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+Future<List<OLLAlgorithm>> loadFavouriteAlgorithms() async {
+  List<Map<String, dynamic>>? allAlgorithms =
+      await jsonStore.getListLike("%-%"); // gets all algorithms
+}
+
+class OLL extends StatelessWidget {
+  const OLL({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Learn CFOP App"),
         centerTitle: true,
         actions: [
           IconButton(
@@ -21,30 +28,56 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SizedBox(height: 32),
-                Text("WELCOME TO LEARN CFOP, \n YOUR SPEEDCUBE MEMORY AID",
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headlineLarge),
-
-                Text(
-                  "Find the solving algorithms in the \n tabs at the bottom",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyLarge,
+      body: FutureBuilder(
+        future: loadFavouriteAlgorithms(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            if (snapshot.data!.isEmpty) {
+              return Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 16),
+                    Text("Welcome",
+                        style: Theme.of(context).textTheme.headlineLarge),
+                    const SizedBox(height: 8),
+                    // Text("Always Forgetters:", style: Theme.of(context).textTheme.bodyLarge),
+                    Spacer(),
+                    Text(
+                        "Add your favourite algorithms\n to the Home page by clicking"),
+                    Spacer(),
+                  ],
                 ),
-                const SizedBox(height: 16),
-                const Icon(Icons.arrow_downward, size: 30),
-                // const Spacer(),
-              ],
-            ),
-          ),
-        ),
+              );
+            } else {
+              return ListView.separated(
+                padding: const EdgeInsets.all(16),
+                itemCount: snapshot.data!.length + 1,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 64, bottom: 16),
+                      child: Text(
+                        "Welcome",
+                        style: Theme.of(context).textTheme.headlineLarge,
+                      ),
+                    );
+                  } else {
+                    return AlgorithmCard(algorithm: snapshot.data![index - 1]);
+                  }
+                },
+                separatorBuilder: (context, index) => SizedBox(height: 16),
+              );
+            }
+          }
+          if (snapshot.hasError) {
+            return Text(
+                "An error occured, please reset your algorithms in Settings.");
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
       ),
     );
   }
