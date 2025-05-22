@@ -1,0 +1,2 @@
+/home/konrad/Documents/learncfop/android/app/.cxx/Debug/3z19602h/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/konrad/Documents/learncfop/android/app/.cxx/Debug/3z19602h/armeabi-v7a/CMakeFiles/rebuild_cache.dir

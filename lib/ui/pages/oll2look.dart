@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../data/json_storage.dart';
-import '../../data/algorithm.dart';
+import '../../data/local_store.dart';
 import '../../ui/widgets/algorithm_card.dart';
-
-Future<List<OLLAlgorithm>> loadOLL2LookAlgorithms() async {
-  List<OLLAlgorithm> algorithms = [];
-  for (int i = 0; i < 10; i++) {
-    final Map<String, dynamic>? json = await loadJson("oll2look-$i");
-    if (json != null) {
-      algorithms.add(OLLAlgorithm.fromJson(json));
-    }
-  }
-  return algorithms;
-}
 
 class OLL2Look extends StatelessWidget {
   const OLL2Look({super.key});
@@ -22,7 +10,7 @@ class OLL2Look extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadOLL2LookAlgorithms(),
+        future: loadAlgorithmsWhere("id LIKE 'oll2look-%'"),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(

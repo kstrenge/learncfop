@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../data/json_storage.dart';
-import '../../data/algorithm.dart';
+import '../../data/local_store.dart';
 import '../widgets/algorithm_card.dart';
-
-Future<List<PLLAlgorithm>> loadPLL2LookAlgorithms() async {
-  List<PLLAlgorithm> algorithms = [];
-  for (int i = 0; i < 6; i++) {
-    final Map<String, dynamic>? json = await loadJson("pll2look-$i");
-    if (json != null) {
-      algorithms.add(PLLAlgorithm.fromJson(json));
-    }
-  }
-  return algorithms;
-}
 
 class PLL2Look extends StatelessWidget {
   const PLL2Look({super.key});
@@ -22,7 +10,7 @@ class PLL2Look extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadPLL2LookAlgorithms(),
+        future: loadAlgorithmsWhere("id LIKE 'pll2look-%'"),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(

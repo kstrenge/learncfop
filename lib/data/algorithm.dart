@@ -1,34 +1,28 @@
+import 'dart:convert';
+
 abstract class Algorithm {
   final String _id;
-  String _label;
-  String _algorithm;
-  String? _notes;
+  String label;
+  String algorithm;
+  String? notes;
   bool _isFavourite;
 
   Algorithm.fromMap(Map<String, dynamic> map)
       : _id = map["id"],
-        _label = map["label"],
-        _algorithm = map["algorithm"],
-        _notes = map["notes"],
+        label = map["label"],
+        algorithm = map["algorithm"],
+        notes = map["notes"],
         _isFavourite = map["isFavourite"] == 1;
 
-  String getId() => _id;
-  String getLabel() => _label;
-  String getAlgorithm() => _algorithm;
-  String? getNotes() => _notes;
-  bool getIsFavourite() => _isFavourite;
-
-  void setLabel(String newLabel) => _label = newLabel;
-  void setAlgorithm(String newAlgorithm) => _algorithm = newAlgorithm;
-  void setNotes(String? newNotes) => _notes = newNotes;
-
+  get id => _id;
+  get isFavourite => _isFavourite;
   void toggleFavourite() => _isFavourite = !_isFavourite;
 
   Map<String, dynamic> toMap() => {
         "id": _id,
-        "label": _label,
-        "algorithm": _algorithm,
-        "notes": _notes,
+        "label": label,
+        "algorithm": algorithm,
+        "notes": notes,
         "isFavourite": _isFavourite ? 1 : 0,
       };
 }
@@ -38,14 +32,17 @@ class OLLAlgorithm extends Algorithm {
 
   OLLAlgorithm.fromMap(Map<String, dynamic> map)
       : _caseConfiguration = List<int>.from(map["caseConfiguration"]),
+        // TODO: vielleicht Listen in den JSON Dateien als String machen, sodass es gleich ist zu einer Abfrage aus der Datenbank!
+        // NEIN FUNKTIONIERT NICHT!!!!
+        // TODO: loadAlgorithm so umschreiben, dass TEXT als JSON interpretiert wird
         super.fromMap(map);
 
-  List<int> getCaseConfiguration() => _caseConfiguration;
+  get caseConfiguration => _caseConfiguration;
 
   @override
   Map<String, dynamic> toMap() => {
         ...super.toMap(),
-        "caseConfiguration": _caseConfiguration.toString(),
+        "caseConfiguration": jsonEncode(_caseConfiguration),
       };
 }
 
@@ -58,13 +55,13 @@ class PLLAlgorithm extends Algorithm {
         _arrows = List<List<dynamic>>.from(map["arrows"]),
         super.fromMap(map);
 
-  getCaseConfiguration() => _caseConfiguration;
-  getArrows() => _arrows;
+  get caseConfiguration => _caseConfiguration;
+  get arrows => _arrows;
 
   @override
   Map<String, dynamic> toMap() => {
         ...super.toMap(),
-        "caseConfiguration": _caseConfiguration.toString(),
-        "arrows": _arrows.toString(),
+        "caseConfiguration": jsonEncode(_caseConfiguration),
+        "arrows": jsonEncode(_arrows),
       };
 }

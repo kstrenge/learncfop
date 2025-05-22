@@ -8,10 +8,10 @@ import 'ui/pages/oll.dart';
 import 'ui/pages/pll2look.dart';
 import 'ui/pages/pll.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
-  welcome();
+  await welcome();
   runApp(const LearnCFOPApp());
 }
 

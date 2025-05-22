@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../data/json_storage.dart';
-import '../../data/algorithm.dart';
+import '../../data/local_store.dart';
 import '../widgets/algorithm_card.dart';
 import '../../ui/pages/info.dart';
 
-Future<List<OLLAlgorithm>> loadFavouriteAlgorithms() async {
-  List<Map<String, dynamic>>? allAlgorithms =
-      await jsonStore.getListLike("%-%"); // gets all algorithms
-}
-
-class OLL extends StatelessWidget {
-  const OLL({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +23,7 @@ class OLL extends StatelessWidget {
         ],
       ),
       body: FutureBuilder(
-        future: loadFavouriteAlgorithms(),
+        future: loadAlgorithmsWhere("isFavourite = 1"),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data!.isEmpty) {

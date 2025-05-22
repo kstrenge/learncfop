@@ -1,0 +1,1 @@
+/home/konrad/Documents/learncfop/build/app/intermediates/cxx/Debug/3z19602h/obj/arm64-v8a

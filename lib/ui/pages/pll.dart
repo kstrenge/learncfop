@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../data/json_storage.dart';
-import '../../data/algorithm.dart';
+import '../../data/local_store.dart';
 import '../widgets/algorithm_card.dart';
-
-Future<List<PLLAlgorithm>> loadPLLAlgorithms() async {
-  List<PLLAlgorithm> algorithms = [];
-  for (int i = 0; i < 21; i++) {
-    final Map<String, dynamic>? json = await loadJson("pll-$i");
-    if (json != null) {
-      algorithms.add(PLLAlgorithm.fromJson(json));
-    }
-  }
-  return algorithms;
-}
 
 class PLL extends StatelessWidget {
   const PLL({super.key});
@@ -22,7 +10,7 @@ class PLL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: loadPLLAlgorithms(),
+        future: loadAlgorithmsWhere("id LIKE 'pll-%'"),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(

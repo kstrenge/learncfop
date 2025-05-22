@@ -22,12 +22,12 @@ class AlgorithmCard extends StatelessWidget {
               child: algorithm is OLLAlgorithm
                   ? OLLCaseIcon(
                       caseConfiguration:
-                          (algorithm as OLLAlgorithm).getCaseConfiguration(),
+                          (algorithm as OLLAlgorithm).caseConfiguration,
                     )
                   : PLLCaseIcon(
                       caseConfiguration:
-                          (algorithm as PLLAlgorithm).getCaseConfiguration(),
-                      arrows: (algorithm as PLLAlgorithm).getArrows(),
+                          (algorithm as PLLAlgorithm).caseConfiguration,
+                      arrows: (algorithm as PLLAlgorithm).arrows,
                     ),
             ),
             const SizedBox(width: 16),
@@ -39,7 +39,7 @@ class AlgorithmCard extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          algorithm.getLabel(),
+                          algorithm.label,
                           style: Theme.of(context)
                               .textTheme
                               .labelSmall!
@@ -49,12 +49,12 @@ class AlgorithmCard extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    algorithm.getAlgorithm(),
+                    algorithm.algorithm,
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(),
                   ),
-                  algorithm.getNotes() != null
+                  algorithm.notes != null
                       ? Text(
-                          algorithm.getNotes()!,
+                          algorithm.notes!,
                           style: Theme.of(context).textTheme.bodyMedium,
                         )
                       : const SizedBox(),
@@ -89,7 +89,7 @@ class _OptionsButtonState extends State<OptionsButton> {
             value: "favourite",
             child: ListTile(
               title: Text("Favourite"),
-              leading: widget.algorithm.getIsFavourite()
+              leading: widget.algorithm.isFavourite
                   ? Icon(
                       Icons.star,
                       color: Colors.amber,

@@ -1,40 +1,33 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
-import '../data/json_storage.dart';
 import '../data/algorithm.dart';
+import '../data/local_store.dart';
 
 Future<void> welcome() async {
-  initializeAlgorithms();
+  // implement check if first time using the app
+  await openDB();
+  await _initializeAlgorithms();
 }
 
-Future<void> initializeAlgorithms() async {
-  const List<String> filepaths = [
+/// Loads all preset algorithms from the JSON files into local storage.
+Future<void> _initializeAlgorithms() async {
+  const List<String> files = [
     "assets/algorithms/oll2look_algorithms.json",
     "assets/algorithms/oll_algorithms.json",
     "assets/algorithms/pll2look_algorithms.json",
     "assets/algorithms/pll_algorithms.json",
   ];
 
-  for (String filepath in filepaths) {
-    final rawJson = await rootBundle.loadString(filepath);
+  for (String file in files) {
+    final rawJson = await rootBundle.loadString(file);
     final Map<String, dynamic> data = jsonDecode(rawJson);
-
-    final List<Algorithm> algorithms = [];
 
     for (Map<String, dynamic> jsonAlgorithm in data.values.first) {
       if (data.containsKey("oll") || data.containsKey("oll2look")) {
-        algorithms.add(OLLAlgorithm.fromJson(jsonAlgorithm));
+        storeAlgorithm(OLLAlgorithm.fromMap(jsonAlgorithm));
       } else if (data.containsKey("pll") || data.containsKey("pll2look")) {
-        algorithms.add(PLLAlgorithm.fromJson(jsonAlgorithm));
-      }
-    }
-
-    for (Algorithm algorithm in algorithms) {
-      if (algorithm is OLLAlgorithm) {
-        storeJson(algorithm.getId(), algorithm.toJson());
-      } else if (algorithm is PLLAlgorithm) {
-        storeJson(algorithm.getId(), algorithm.toJson());
+        storeAlgorithm(PLLAlgorithm.fromMap(jsonAlgorithm));
       }
     }
   }
