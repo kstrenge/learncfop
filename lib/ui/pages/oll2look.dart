@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../data/local_store.dart';
+import '../../data/local_store_old.dart';
 import '../../ui/widgets/algorithm_card.dart';
 
 class OLL2Look extends StatelessWidget {

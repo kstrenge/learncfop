@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../data/local_store.dart';
+import '../../data/local_store_old.dart';
 import '../widgets/algorithm_card.dart';
 import '../../ui/pages/info.dart';
 

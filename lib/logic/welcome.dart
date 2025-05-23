@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import '../data/algorithm.dart';
-import '../data/local_store.dart';
+import '../data/local_store_old.dart';
 
 Future<void> welcome() async {
   // implement check if first time using the app
