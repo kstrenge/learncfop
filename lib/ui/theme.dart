@@ -28,7 +28,7 @@ ButtonStyle coloredButtonStyle(Color color) {
   );
 }
 
-makeSystemNavigationTransparent() {
+void makeSystemNavigationTransparent() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent,

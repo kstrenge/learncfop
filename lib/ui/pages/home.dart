@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../data/local_store_old.dart';
+import '../../data/algorithm.dart';
+import 'info.dart';
 import '../widgets/algorithm_card.dart';
-import '../../ui/pages/info.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  final List<Algorithm> favourites;
+  const Home({super.key, required this.favourites});
 
   @override
   Widget build(BuildContext context) {
@@ -22,57 +23,42 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      body: FutureBuilder(
-        future: loadAlgorithmsWhere("isFavourite = 1"),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            if (snapshot.data!.isEmpty) {
-              return Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 16),
-                    Text("Welcome",
-                        style: Theme.of(context).textTheme.headlineLarge),
-                    const SizedBox(height: 8),
-                    // Text("Always Forgetters:", style: Theme.of(context).textTheme.bodyLarge),
-                    Spacer(),
-                    Text(
-                        "Add your favourite algorithms\n to the Home page by clicking"),
-                    Spacer(),
-                  ],
-                ),
-              );
-            } else {
-              return ListView.separated(
-                padding: const EdgeInsets.all(16),
-                itemCount: snapshot.data!.length + 1,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return Padding(
-                      padding: const EdgeInsets.only(top: 64, bottom: 16),
-                      child: Text(
-                        "Welcome",
-                        style: Theme.of(context).textTheme.headlineLarge,
-                      ),
-                    );
-                  } else {
-                    return AlgorithmCard(algorithm: snapshot.data![index - 1]);
-                  }
-                },
-                separatorBuilder: (context, index) => SizedBox(height: 16),
-              );
-            }
-          }
-          if (snapshot.hasError) {
-            return Text(
-                "An error occured, please reset your algorithms in Settings.");
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        },
-      ),
+      body: favourites.isEmpty
+          ? Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 16),
+                  Text("Welcome",
+                      style: Theme.of(context).textTheme.headlineLarge),
+                  const SizedBox(height: 8),
+                  // Text("Always Forgetters:", style: Theme.of(context).textTheme.bodyLarge),
+                  Spacer(),
+                  Text(
+                      "Add your favourite algorithms\n to the Home page by clicking"),
+                  Spacer(),
+                ],
+              ),
+            )
+          : ListView.separated(
+              padding: const EdgeInsets.all(16),
+              itemCount: favourites.length + 1,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 64, bottom: 16),
+                    child: Text(
+                      "Welcome",
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
+                  );
+                } else {
+                  return AlgorithmCard(algorithm: favourites[index - 1]);
+                }
+              },
+              separatorBuilder: (context, index) => SizedBox(height: 16),
+            ),
     );
   }
 }

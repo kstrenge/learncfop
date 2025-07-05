@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../../data/local_store_old.dart';
+import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
 class PLL2Look extends StatelessWidget {
-  const PLL2Look({super.key});
+  final List<Algorithm> algorithms;
+  const PLL2Look({super.key, required this.algorithms});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        future: loadAlgorithmsWhere("id LIKE 'pll2look-%'"),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.separated(
+      body: algorithms.isEmpty
+          ? Center(
+              child: Text(
+                  "Error while loading algorithms. Reset algorithms in settings."),
+            )
+          : ListView.separated(
               padding: const EdgeInsets.all(16),
-              itemCount: snapshot.data!.length + 2,
+              itemCount: algorithms.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Column(
@@ -32,23 +34,15 @@ class PLL2Look extends StatelessWidget {
                     ],
                   );
                 } else if (index > 0 && index < 3) {
-                  return AlgorithmCard(algorithm: snapshot.data![index - 1]);
+                  return AlgorithmCard(algorithm: algorithms[index - 1]);
                 } else if (index == 3) {
                   return const Text("Step 2 - Edges:");
                 } else {
-                  return AlgorithmCard(algorithm: snapshot.data![index - 2]);
+                  return AlgorithmCard(algorithm: algorithms[index - 2]);
                 }
               },
               separatorBuilder: (context, index) => SizedBox(height: 16),
-            );
-          }
-          if (snapshot.hasError) {
-            return Text(snapshot.error.toString());
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        },
-      ),
+            ),
     );
   }
 }

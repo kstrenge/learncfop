@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../../data/local_store_old.dart';
+import '../../data/algorithm.dart';
 import '../widgets/algorithm_card.dart';
 
 class OLL extends StatelessWidget {
-  const OLL({super.key});
+  final List<Algorithm> algorithms;
+  const OLL({super.key, required this.algorithms});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        future: loadAlgorithmsWhere("id LIKE 'oll-%'"),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.separated(
+      body: algorithms.isEmpty
+          ? Center(
+              child: Text(
+                  "Error while loading algorithms. Reset algorithms in settings."),
+            )
+          : ListView.separated(
               padding: const EdgeInsets.all(16),
-              itemCount: snapshot.data!.length + 1,
+              itemCount: algorithms.length + 1,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Padding(
@@ -26,19 +28,11 @@ class OLL extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return AlgorithmCard(algorithm: snapshot.data![index - 1]);
+                  return AlgorithmCard(algorithm: algorithms[index - 1]);
                 }
               },
               separatorBuilder: (context, index) => SizedBox(height: 16),
-            );
-          }
-          if (snapshot.hasError) {
-            return Text(snapshot.error.toString());
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        },
-      ),
+            ),
     );
   }
 }

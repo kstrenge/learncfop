@@ -26,12 +26,13 @@ dependencies:
   cupertino_icons: ^1.0.0
   flutter_launcher_icons: ^0.14.3
   google_fonts: ^6.2.1
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   widget_arrows: ^0.6.0
   font_awesome_flutter: ^10.8.0
   sqflite: ^2.4.1
   path: ^1.9.0
   hive: ^2.2.3
+  path_provider: ^2.1.5
 
 dev_dependencies:
   flutter_test:
