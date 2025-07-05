@@ -43,7 +43,8 @@ class HiveAlgorithmProvider implements AlgorithmProvider {
 
     return _algorithms.values
         .where((jsonAlgorithm) => jsonAlgorithm["isFavourite"] == true)
-        .map((jsonAlgorithm) => Algorithm.fromJson(jsonAlgorithm))
+        .map((jsonAlgorithm) =>
+            Algorithm.fromJson((jsonAlgorithm as Map).cast<String, dynamic>()))
         .toList();
   }
 
