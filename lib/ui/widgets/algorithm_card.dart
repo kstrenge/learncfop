@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learncfop/data/algorithm_provider.dart';
 
 import '../../data/algorithm.dart';
 import 'oll_case_icon.dart';
@@ -110,6 +111,7 @@ class _OptionsButtonState extends State<OptionsButton> {
         if (value == "favourite") {
           setState(() {
             widget.algorithm.toggleFavourite();
+            algorithmProvider.storeAlgorithm(widget.algorithm);
           });
         }
         if (value == "edit") {}

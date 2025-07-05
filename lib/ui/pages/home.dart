@@ -33,10 +33,16 @@ class Home extends StatelessWidget {
                   Text("Welcome",
                       style: Theme.of(context).textTheme.headlineLarge),
                   const SizedBox(height: 8),
-                  // Text("Always Forgetters:", style: Theme.of(context).textTheme.bodyLarge),
                   Spacer(),
-                  Text(
-                      "Add your favourite algorithms\n to the Home page by clicking"),
+                  Center(
+                    child: Column(
+                      children: [
+                        Text(
+                            "Add your favourite algorithms\n to the Home page by clicking"),
+                        Icon(Icons.star, color: Colors.amber)
+                      ],
+                    ),
+                  ),
                   Spacer(),
                 ],
               ),
