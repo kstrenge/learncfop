@@ -13,7 +13,7 @@ class PLL extends StatelessWidget {
     return AlgorithmPage(
         title: "Instant Permutation of Last Layer",
         algorithmSliverList: SliverList.separated(
-          itemCount: algorithms.length + 1,
+          itemCount: algorithms.length,
           itemBuilder: (context, index) =>
               AlgorithmCard(algorithm: algorithms[index]),
           separatorBuilder: (context, index) => SizedBox(height: 16),

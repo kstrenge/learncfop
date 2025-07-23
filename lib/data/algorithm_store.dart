@@ -1,14 +1,14 @@
 import 'algorithm.dart';
 import 'hive.dart';
 
-AlgorithmProvider algorithmProvider = HiveAlgorithmProvider();
+AlgorithmStore algorithmStore = HiveAlgorithmStore();
 
-abstract class AlgorithmProvider {
-  /// Starts the Provider service.
+abstract class AlgorithmStore {
+  /// Starts the AlgorithmStore service.
   /// Is called at the startup of flutter app.
   Future<void> startup();
 
-  /// Checks if the Provider is ready.
+  /// Checks if the Store is ready.
   bool isReady();
 
   /// Load a stored algorithm via its id.

@@ -2,9 +2,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:hive/hive.dart';
 
 import 'algorithm.dart';
-import 'algorithm_provider.dart';
+import 'algorithm_store.dart';
 
-class HiveAlgorithmProvider implements AlgorithmProvider {
+class HiveAlgorithmStore implements AlgorithmStore {
   late final Box _algorithms;
   bool _isReady = false;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'data/algorithm_provider.dart';
+import 'data/algorithm_store.dart';
 import 'logic/welcome.dart';
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
@@ -12,7 +12,7 @@ import 'ui/pages/pll.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
-  await algorithmProvider.startup();
+  await algorithmStore.startup();
   // TODO: überprüfen ob erster Start:
   initializeAlgorithms();
   runApp(const LearnCFOPApp());
@@ -36,11 +36,11 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       darkTheme: darkTheme(context),
       home: Scaffold(
         body: [
-          Home(favourites: algorithmProvider.loadFavouriteAlgorithms()),
-          OLL2Look(algorithms: algorithmProvider.loadAlgorithms("oll2look")),
-          OLL(algorithms: algorithmProvider.loadAlgorithms("oll")),
-          PLL2Look(algorithms: algorithmProvider.loadAlgorithms("pll2look")),
-          PLL(algorithms: algorithmProvider.loadAlgorithms("pll")),
+          Home(favourites: algorithmStore.loadFavouriteAlgorithms()),
+          OLL2Look(algorithms: algorithmStore.loadAlgorithms("oll2look")),
+          OLL(algorithms: algorithmStore.loadAlgorithms("oll")),
+          PLL2Look(algorithms: algorithmStore.loadAlgorithms("pll2look")),
+          PLL(algorithms: algorithmStore.loadAlgorithms("pll")),
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) =>
