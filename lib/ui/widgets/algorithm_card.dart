@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../data/algorithm.dart';
-import 'algorithm_options_button.dart';
+import '../../data/algorithm_provider.dart';
 import 'oll_case_icon.dart';
 import 'pll_case_icon.dart';
 
@@ -62,7 +63,38 @@ class AlgorithmCard extends StatelessWidget {
                 ],
               ),
             ),
-            AlgorithmOptionsButton(algorithm: algorithm),
+            PopupMenuButton(
+              menuPadding: EdgeInsets.zero,
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(
+                    value: "favourite",
+                    child: ListTile(
+                      title: Text("Favourite"),
+                      leading: algorithm.isFavourite
+                          ? Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            )
+                          : Icon(Icons.star_outline),
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: "edit",
+                    child: ListTile(
+                      title: Text("Edit"),
+                      leading: Icon(Icons.edit_outlined),
+                    ),
+                  ),
+                ];
+              },
+              onSelected: (value) {
+                if (value == "favourite") {
+                  context.read<AlgorithmProvider>().toggleFavourite(algorithm);
+                }
+                if (value == "edit") {}
+              },
+            ),
           ],
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'data/algorithm_store.dart';
+import 'data/hive_algorithm_repository.dart';
+import 'data/algorithm_provider.dart';
 import 'logic/welcome.dart';
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
@@ -12,10 +14,22 @@ import 'ui/pages/pll.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
-  await algorithmStore.startup();
-  // TODO: überprüfen ob erster Start:
-  initializeAlgorithms();
-  runApp(const LearnCFOPApp());
+
+  final algorithmRepository = HiveAlgorithmRepository();
+  await algorithmRepository.startup();
+
+  // TODO: überprüfen ob erster Start -> in welcome.dart implementieren:
+  await initializeAlgorithms(algorithmRepository);
+
+  final algorithmProvider = AlgorithmProvider(algorithmRepository);
+  await algorithmProvider.loadAlgorithms();
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => algorithmProvider,
+      child: const LearnCFOPApp(),
+    ),
+  );
 }
 
 class LearnCFOPApp extends StatefulWidget {
@@ -36,11 +50,11 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       darkTheme: darkTheme(context),
       home: Scaffold(
         body: [
-          Home(favourites: algorithmStore.loadFavouriteAlgorithms()),
-          OLL2Look(algorithms: algorithmStore.loadAlgorithms("oll2look")),
-          OLL(algorithms: algorithmStore.loadAlgorithms("oll")),
-          PLL2Look(algorithms: algorithmStore.loadAlgorithms("pll2look")),
-          PLL(algorithms: algorithmStore.loadAlgorithms("pll")),
+          Home(),
+          OLL2Look(),
+          OLL(),
+          PLL2Look(),
+          PLL(),
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) =>

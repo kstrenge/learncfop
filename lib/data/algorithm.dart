@@ -1,5 +1,5 @@
 abstract class Algorithm {
-  /// ID of the Algorithm.
+  /// ID of an algorithm.
   /// Rules: must start with "oll", "pll", "oll2llok", "pll2look".
   /// Examples: "oll_0", "pll_15", "oll2look_3".
   final String _id;
