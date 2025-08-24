@@ -10,8 +10,10 @@ class EasterEgg extends StatefulWidget {
 
 class _EasterEggState extends State<EasterEgg>
     with SingleTickerProviderStateMixin {
-  late final AnimationController controller =
-      AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+  late final AnimationController controller = AnimationController(
+    vsync: this,
+    duration: Duration(milliseconds: 300),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class _EasterEggState extends State<EasterEgg>
                   controller.reset();
                   controller.forward();
                 },
-                child: Image.asset("assets/icon/icon_foreground.png"),
+                child: Image.asset("assets/icon/foreground.png"),
               ),
             ),
           ),
