@@ -42,9 +42,7 @@ class AlgorithmCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           algorithm.label,
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelSmall!
+                          style: Theme.of(context).textTheme.labelSmall!
                               .copyWith(fontWeight: FontWeight.w900),
                         ),
                       ),
@@ -63,38 +61,49 @@ class AlgorithmCard extends StatelessWidget {
                 ],
               ),
             ),
-            PopupMenuButton(
-              menuPadding: EdgeInsets.zero,
-              itemBuilder: (context) {
-                return [
-                  PopupMenuItem(
-                    value: "favourite",
-                    child: ListTile(
-                      title: Text("Favourite"),
-                      leading: algorithm.isFavourite
-                          ? Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                            )
-                          : Icon(Icons.star_outline),
-                    ),
-                  ),
-                  PopupMenuItem(
-                    value: "edit",
-                    child: ListTile(
-                      title: Text("Edit"),
-                      leading: Icon(Icons.edit_outlined),
-                    ),
-                  ),
-                ];
-              },
-              onSelected: (value) {
-                if (value == "favourite") {
-                  context.read<AlgorithmProvider>().toggleFavourite(algorithm);
-                }
-                if (value == "edit") {}
-              },
+            IconButton(
+              onPressed: () =>
+                  context.read<AlgorithmProvider>().toggleFavourite(algorithm),
+              icon: algorithm.isFavourite
+                  ? Icon(
+                      Icons.push_pin,
+                      color: Theme.of(context).colorScheme.primary,
+                    )
+                  : Icon(Icons.push_pin_outlined),
             ),
+
+            // PopupMenuButton(
+            //   menuPadding: EdgeInsets.zero,
+            //   itemBuilder: (context) {
+            //     return [
+            //       PopupMenuItem(
+            //         value: "favourite",
+            //         child: ListTile(
+            //           title: Text("Favourite"),
+            //           leading: algorithm.isFavourite
+            //               ? Icon(
+            //                   Icons.star,
+            //                   color: Colors.amber,
+            //                 )
+            //               : Icon(Icons.star_outline),
+            //         ),
+            //       ),
+            //       PopupMenuItem(
+            //         value: "edit",
+            //         child: ListTile(
+            //           title: Text("Edit"),
+            //           leading: Icon(Icons.edit_outlined),
+            //         ),
+            //       ),
+            //     ];
+            //   },
+            //   onSelected: (value) {
+            //     if (value == "favourite") {
+            //       context.read<AlgorithmProvider>().toggleFavourite(algorithm);
+            //     }
+            //     if (value == "edit") {}
+            //   },
+            // ),
           ],
         ),
       ),
