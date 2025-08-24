@@ -18,7 +18,7 @@ Future<void> initializeAlgorithms(AlgorithmRepository repository) async {
     final Map<String, dynamic> data = jsonDecode(rawJson);
 
     for (Map<String, dynamic> jsonAlgorithm in data.values.first) {
-      jsonAlgorithm["isFavourite"] = false;
+      jsonAlgorithm["isPinned"] = false;
       if (data.containsKey("oll") || data.containsKey("oll2look")) {
         repository.storeAlgorithm(OLLAlgorithm.fromJson(jsonAlgorithm));
       } else if (data.containsKey("pll") || data.containsKey("pll2look")) {

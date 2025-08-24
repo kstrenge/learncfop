@@ -13,9 +13,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? favourites = context
+    final List<Algorithm>? pinned = context
         .watch<AlgorithmProvider>()
-        .getFavouriteAlgorithms();
+        .getPinnedAlgorithms();
 
     return Scaffold(
       body: CustomScrollView(
@@ -44,11 +44,11 @@ class HomePage extends StatelessWidget {
           ),
           SliverPadding(
             padding: EdgeInsetsGeometry.fromLTRB(16, 0, 16, 16),
-            sliver: favourites != null && favourites.isNotEmpty
+            sliver: pinned != null && pinned.isNotEmpty
                 ? SliverList.separated(
-                    itemCount: favourites.length,
+                    itemCount: pinned.length,
                     itemBuilder: (context, index) =>
-                        AlgorithmCard(algorithm: favourites[index]),
+                        AlgorithmCard(algorithm: pinned[index]),
                     separatorBuilder: (context, index) => SizedBox(height: 16),
                   )
                 : SliverFillRemaining(

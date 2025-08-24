@@ -42,11 +42,12 @@ class AlgorithmProvider extends ChangeNotifier {
     }
   }
 
-  /// Returns all algorithms where isFavourite == true.
+  /// Returns all algorithms where isPinned == true.
   /// Returns null if there are none.
-  List<Algorithm>? getFavouriteAlgorithms() {
-    final results =
-        _algorithms.values.where((value) => value.isFavourite).toList();
+  List<Algorithm>? getPinnedAlgorithms() {
+    final results = _algorithms.values
+        .where((value) => value.isPinned)
+        .toList();
     if (results.isNotEmpty) {
       return results;
     } else {
@@ -54,9 +55,9 @@ class AlgorithmProvider extends ChangeNotifier {
     }
   }
 
-  /// Toggles isFavourite for an algorithm and updates UI accordingly.
-  void toggleFavourite(Algorithm algorithm) {
-    algorithm.toggleFavourite();
+  /// Toggles isPinned for an algorithm and updates UI accordingly.
+  void togglePinned(Algorithm algorithm) {
+    algorithm.togglePinned();
     _algorithms[algorithm.id] = algorithm;
     _repository.storeAlgorithm(algorithm);
     notifyListeners();

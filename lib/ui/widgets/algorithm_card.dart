@@ -63,8 +63,8 @@ class AlgorithmCard extends StatelessWidget {
             ),
             IconButton(
               onPressed: () =>
-                  context.read<AlgorithmProvider>().toggleFavourite(algorithm),
-              icon: algorithm.isFavourite
+                  context.read<AlgorithmProvider>().togglePinned(algorithm),
+              icon: algorithm.isPinned
                   ? Icon(
                       Icons.push_pin,
                       color: Theme.of(context).colorScheme.primary,
@@ -77,10 +77,10 @@ class AlgorithmCard extends StatelessWidget {
             //   itemBuilder: (context) {
             //     return [
             //       PopupMenuItem(
-            //         value: "favourite",
+            //         value: "pin",
             //         child: ListTile(
-            //           title: Text("Favourite"),
-            //           leading: algorithm.isFavourite
+            //           title: Text("Pin"),
+            //           leading: algorithm.isPinned
             //               ? Icon(
             //                   Icons.star,
             //                   color: Colors.amber,
@@ -98,8 +98,8 @@ class AlgorithmCard extends StatelessWidget {
             //     ];
             //   },
             //   onSelected: (value) {
-            //     if (value == "favourite") {
-            //       context.read<AlgorithmProvider>().toggleFavourite(algorithm);
+            //     if (value == "pin") {
+            //       context.read<AlgorithmProvider>().togglePinned(algorithm);
             //     }
             //     if (value == "edit") {}
             //   },
