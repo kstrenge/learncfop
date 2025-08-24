@@ -3,12 +3,12 @@ import 'package:provider/provider.dart';
 
 import '../../data/algorithm.dart';
 import '../../data/algorithm_provider.dart';
-import '../../ui/pages/info.dart';
+import 'info_page.dart';
 import '../../ui/widgets/algorithm_card.dart';
 import '../../ui/widgets/username.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,14 @@ class Home extends StatelessWidget {
               IconButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Info()),
+                  MaterialPageRoute(builder: (context) => const InfoPage()),
+                ),
+                icon: const Icon(Icons.info_outlined),
+              ),
+              IconButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Theme()),
                 ),
                 icon: const Icon(Icons.info_outlined),
               ),

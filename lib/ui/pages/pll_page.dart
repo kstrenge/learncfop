@@ -7,31 +7,22 @@ import '../widgets/algorithm_page.dart';
 import '../widgets/algorithm_card.dart';
 import '../widgets/error.dart';
 
-class PLL2Look extends StatelessWidget {
-  const PLL2Look({super.key});
+class PLLPage extends StatelessWidget {
+  const PLLPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<Algorithm>? algorithms = context
         .watch<AlgorithmProvider>()
-        .getAlgorithmsWhereIdContains("pll2look");
+        .getAlgorithmsWhereIdContains("pll");
 
     return AlgorithmPage(
-      title: "Permutation of Last Layer in 2 steps",
+      title: "Instant Permutation of Last Layer",
       algorithmSliverList: algorithms != null && algorithms.isNotEmpty
           ? SliverList.separated(
-              itemCount: algorithms.length + 2,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return Text("Step 1 - Corners:");
-                } else if (index > 0 && index < 3) {
-                  return AlgorithmCard(algorithm: algorithms[index - 1]);
-                } else if (index == 3) {
-                  return const Text("Step 2 - Edges:");
-                } else {
-                  return AlgorithmCard(algorithm: algorithms[index - 2]);
-                }
-              },
+              itemCount: algorithms.length,
+              itemBuilder: (context, index) =>
+                  AlgorithmCard(algorithm: algorithms[index]),
               separatorBuilder: (context, index) => SizedBox(height: 16),
             )
           : SliverList(delegate: SliverChildListDelegate([ErrorMessage()])),

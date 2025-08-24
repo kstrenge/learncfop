@@ -7,16 +7,17 @@ import '../widgets/algorithm_page.dart';
 import '../widgets/algorithm_card.dart';
 import '../widgets/error.dart';
 
-class PLL extends StatelessWidget {
-  const PLL({super.key});
+class OLLPage extends StatelessWidget {
+  const OLLPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? algorithms =
-        context.watch<AlgorithmProvider>().getAlgorithmsWhereIdContains("pll");
+    final List<Algorithm>? algorithms = context
+        .watch<AlgorithmProvider>()
+        .getAlgorithmsWhereIdContains("oll");
 
     return AlgorithmPage(
-      title: "Instant Permutation of Last Layer",
+      title: "Instant Orientation of Last Layer",
       algorithmSliverList: algorithms != null && algorithms.isNotEmpty
           ? SliverList.separated(
               itemCount: algorithms.length,

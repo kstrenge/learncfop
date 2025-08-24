@@ -7,10 +7,10 @@ import 'data/preferences.dart';
 import 'logic/initialize_algorithms.dart';
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
-import 'ui/pages/oll2look.dart';
-import 'ui/pages/oll.dart';
-import 'ui/pages/pll2look.dart';
-import 'ui/pages/pll.dart';
+import 'ui/pages/oll2look_page.dart';
+import 'ui/pages/oll_page.dart';
+import 'ui/pages/pll2look_page.dart';
+import 'ui/pages/pll_page.dart';
 
 void main() async {
   // start services:
@@ -25,7 +25,6 @@ void main() async {
   // initialize on first launch:
   if (await Preferences.isFirstLaunch()) {
     await initializeAlgorithms(algorithmRepository);
-    print("THIS WAS THE FIRST START, ALGORITHMS WERE INITIALIZED");
     await Preferences.markAsLaunchedBefore();
   }
 
@@ -59,7 +58,13 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       theme: lightTheme(context),
       darkTheme: darkTheme(context),
       home: Scaffold(
-        body: [Home(), OLL2Look(), OLL(), PLL2Look(), PLL()][currentPageIndex],
+        body: [
+          HomePage(),
+          OLL2LookPage(),
+          OLLPage(),
+          PLL2LookPage(),
+          PLLPage(),
+        ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) =>
               setState(() => currentPageIndex = index),
