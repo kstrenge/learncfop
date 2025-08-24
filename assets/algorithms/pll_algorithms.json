@@ -168,7 +168,7 @@
             "arrows": [
                 [1, 9, true], [4, 2, true]
             ],
-            "algorithm": "R' U R' U' y R' F' R2 U' R' U R' F R F",
+            "algorithm": "F R U' R' U' R U R' F' R U R' U' R' F R F'",
             "notes": "Diagonal Corner Swap"
         },
         {
