@@ -6,7 +6,7 @@ import 'data/algorithm_provider.dart';
 import 'data/preferences.dart';
 import 'logic/initialize_algorithms.dart';
 import 'ui/theme.dart';
-import 'ui/pages/home.dart';
+import 'ui/pages/home_page.dart';
 import 'ui/pages/oll2look_page.dart';
 import 'ui/pages/oll_page.dart';
 import 'ui/pages/pll2look_page.dart';
