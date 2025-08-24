@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../../data/algorithm.dart';
 import '../../data/algorithm_provider.dart';
-import 'info_page.dart';
+import '../../ui/pages/info_page.dart';
+import '../../ui/pages/theme_page.dart';
 import '../../ui/widgets/algorithm_card.dart';
 import '../../ui/widgets/username.dart';
 
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
               IconButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Theme()),
+                  MaterialPageRoute(builder: (context) => const ThemePage()),
                 ),
                 icon: const Icon(Icons.info_outlined),
               ),
