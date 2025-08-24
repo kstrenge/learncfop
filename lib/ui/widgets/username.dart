@@ -21,7 +21,7 @@ class Username extends StatelessWidget {
                     ),
                     focusedBorder: UnderlineInputBorder(),
                   ),
-                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                  style: DefaultTextStyle.of(context).style.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   onFieldSubmitted: (value) => Preferences.saveUsername(value),
