@@ -41,6 +41,7 @@ dependencies:
   google_fonts: ^6.3.0
   widget_arrows: ^0.6.0
   flutter_launcher_icons: ^0.14.4
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 
 import 'data/hive_algorithm_repository.dart';
 import 'data/algorithm_provider.dart';
-import 'logic/welcome.dart';
+import 'data/preferences.dart';
+import 'logic/initialize_algorithms.dart';
 import 'ui/theme.dart';
 import 'ui/pages/home.dart';
 import 'ui/pages/oll2look.dart';
@@ -12,18 +13,27 @@ import 'ui/pages/pll2look.dart';
 import 'ui/pages/pll.dart';
 
 void main() async {
+  // start services:
   WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
+
+  Preferences.init();
 
   final algorithmRepository = HiveAlgorithmRepository();
   await algorithmRepository.startup();
 
-  // TODO: überprüfen ob erster Start -> in welcome.dart implementieren:
-  await initializeAlgorithms(algorithmRepository);
+  // initialize on first launch:
+  if (await Preferences.isFirstLaunch()) {
+    await initializeAlgorithms(algorithmRepository);
+    print("THIS WAS THE FIRST START, ALGORITHMS WERE INITIALIZED");
+    await Preferences.markAsLaunchedBefore();
+  }
 
+  // start provider:
   final algorithmProvider = AlgorithmProvider(algorithmRepository);
   await algorithmProvider.loadAlgorithms();
 
+  // start ui:
   runApp(
     ChangeNotifierProvider(
       create: (context) => algorithmProvider,
@@ -49,13 +59,7 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       theme: lightTheme(context),
       darkTheme: darkTheme(context),
       home: Scaffold(
-        body: [
-          Home(),
-          OLL2Look(),
-          OLL(),
-          PLL2Look(),
-          PLL(),
-        ][currentPageIndex],
+        body: [Home(), OLL2Look(), OLL(), PLL2Look(), PLL()][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) =>
               setState(() => currentPageIndex = index),
@@ -75,17 +79,11 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
               label: "OLL",
             ),
             NavigationDestination(
-              icon: Icon(
-                Icons.sync,
-                size: 22,
-              ),
+              icon: Icon(Icons.sync, size: 22),
               label: "PLL2Look",
             ),
             NavigationDestination(
-              icon: Icon(
-                Icons.replay,
-                size: 22,
-              ),
+              icon: Icon(Icons.replay, size: 22),
               label: "PLL",
             ),
           ],

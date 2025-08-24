@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:learncfop/data/algorithm_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/algorithm.dart';
+import '../../data/algorithm_provider.dart';
 import '../../ui/pages/info.dart';
 import '../../ui/widgets/algorithm_card.dart';
+import '../../ui/widgets/username.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? favourites =
-        context.watch<AlgorithmProvider>().getFavouriteAlgorithms();
+    final List<Algorithm>? favourites = context
+        .watch<AlgorithmProvider>()
+        .getFavouriteAlgorithms();
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
-            title: Text("Welcome"),
+            title: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [Text("Welcome, "), Username()],
+            ),
             actions: [
               IconButton(
                 onPressed: () => Navigator.push(
@@ -38,15 +43,26 @@ class Home extends StatelessWidget {
                         AlgorithmCard(algorithm: favourites[index]),
                     separatorBuilder: (context, index) => SizedBox(height: 16),
                   )
-                : SliverToBoxAdapter(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 32),
-                        Text(
-                            "Add your favourite algorithms\n to the Home page by clicking"),
-                        SizedBox(height: 4),
-                        Icon(Icons.star, color: Colors.amber)
-                      ],
+                : SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Padding(
+                      padding: const EdgeInsets.all(32),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 32),
+                          Text(
+                            "Pin the algorithms you always forget to the Home page by clicking",
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 8),
+                          Icon(
+                            Icons.push_pin_outlined,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          SizedBox(height: 64),
+                        ],
+                      ),
                     ),
                   ),
           ),
