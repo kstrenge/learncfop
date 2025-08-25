@@ -34,15 +34,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 icon: const Icon(Icons.info_outlined),
               ),
-              IconButton(
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ThemePage(),
-                  ), // TODO: theme page
-                ),
-                icon: const Icon(Icons.info_outlined),
-              ),
             ],
           ),
           SliverPadding(

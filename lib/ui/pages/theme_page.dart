@@ -5,6 +5,9 @@ class ThemePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: Text("Choose Theme")),
+      body: Center(),
+    );
   }
 }
