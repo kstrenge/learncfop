@@ -9,7 +9,7 @@ class Username extends StatelessWidget {
     return FutureBuilder(
       future: Preferences.loadUsername(),
       builder: (context, snapshot) {
-        return IntrinsicWidth(
+        return Expanded(
           child: snapshot.hasData
               ? TextFormField(
                   initialValue: snapshot.data,
