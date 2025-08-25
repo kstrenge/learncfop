@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'data/preferences.dart';
 import 'data/hive_algorithm_repository.dart';
 import 'data/algorithm_provider.dart';
-import 'data/preferences.dart';
 import 'logic/initialize_algorithms.dart';
 import 'ui/theme.dart';
 import 'ui/pages/home_page.dart';
@@ -13,7 +13,7 @@ import 'ui/pages/pll2look_page.dart';
 import 'ui/pages/pll_page.dart';
 
 void main() async {
-  // start services:
+  // Start services:
   WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
 
@@ -22,17 +22,17 @@ void main() async {
   final algorithmRepository = HiveAlgorithmRepository();
   await algorithmRepository.startup();
 
-  // initialize on first launch:
+  // Initialize on first launch:
   if (await Preferences.isFirstLaunch()) {
     await initializeAlgorithms(algorithmRepository);
     await Preferences.markAsLaunchedBefore();
   }
 
-  // start provider:
+  // Start provider:
   final algorithmProvider = AlgorithmProvider(algorithmRepository);
   await algorithmProvider.loadAlgorithms();
 
-  // start ui:
+  // Start UI:
   runApp(
     ChangeNotifierProvider(
       create: (context) => algorithmProvider,

@@ -6,11 +6,15 @@ import '../../data/algorithm_provider.dart';
 import '../../ui/pages/info_page.dart';
 import '../../ui/pages/theme_page.dart';
 import '../../ui/widgets/algorithm_card.dart';
-import '../../ui/widgets/username.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List<Algorithm>? pinned = context
@@ -21,10 +25,7 @@ class HomePage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
-            title: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [Text("Welcome, "), Username()],
-            ),
+            title: Text("Welcome"),
             actions: [
               IconButton(
                 onPressed: () => Navigator.push(
@@ -36,7 +37,9 @@ class HomePage extends StatelessWidget {
               IconButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ThemePage()),
+                  MaterialPageRoute(
+                    builder: (context) => const ThemePage(),
+                  ), // TODO: theme page
                 ),
                 icon: const Icon(Icons.info_outlined),
               ),
