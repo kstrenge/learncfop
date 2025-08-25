@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../theme.dart';
 import '../widgets/easter_egg.dart';
@@ -27,19 +28,25 @@ class InfoPage extends StatelessWidget {
               style: coloredButtonStyle(
                 Theme.of(context).colorScheme.onSurface,
               ),
-              onPressed: () {},
+              onPressed: () async => await launchUrl(
+                Uri.parse("https://github.com/kstrenge/learncfop"),
+              ),
             ),
             TextButton.icon(
               label: const Text("Report bug / error"),
               icon: const FaIcon(Icons.bug_report),
               style: coloredButtonStyle(Theme.of(context).colorScheme.error),
-              onPressed: () {},
+              onPressed: () async => await launchUrl(
+                Uri.parse("https://github.com/kstrenge/learncfop/issues"),
+              ),
             ),
             TextButton.icon(
               label: const Text("Suggest feature"),
               icon: const FaIcon(Icons.lightbulb),
               style: coloredButtonStyle(Theme.of(context).colorScheme.primary),
-              onPressed: () {},
+              onPressed: () async => await launchUrl(
+                Uri.parse("https://github.com/kstrenge/learncfop/issues"),
+              ),
             ),
             Spacer(),
             Text("Version 2.0"),
