@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../../data/algorithm.dart';
 import '../../data/algorithm_provider.dart';
 import '../../ui/pages/info_page.dart';
-import '../../ui/pages/theme_page.dart';
 import '../../ui/widgets/algorithm_card.dart';
 
 class HomePage extends StatefulWidget {
