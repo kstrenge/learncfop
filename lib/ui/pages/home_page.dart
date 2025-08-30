@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../data/algorithm.dart';
 import '../../data/algorithm_provider.dart';
 import '../../ui/pages/info_page.dart';
+import '../../ui/pages/theme_page.dart';
 import '../../ui/widgets/algorithm_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,6 +27,13 @@ class _HomePageState extends State<HomePage> {
           SliverAppBar.large(
             title: Text("Welcome"),
             actions: [
+              IconButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ThemePage()),
+                ),
+                icon: const Icon(Icons.color_lens_outlined),
+              ),
               IconButton(
                 onPressed: () => Navigator.push(
                   context,

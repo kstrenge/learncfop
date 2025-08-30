@@ -29,7 +29,7 @@ class _EasterEggState extends State<EasterEgg>
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(32),
               ),
-              color: Theme.of(context).colorScheme.surface,
+              color: Colors.white,
               elevation: 12,
               child: InkWell(
                 borderRadius: BorderRadius.circular(32),

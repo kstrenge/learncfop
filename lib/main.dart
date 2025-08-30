@@ -28,14 +28,17 @@ void main() async {
     await Preferences.markAsLaunchedBefore();
   }
 
-  // Start provider:
+  // Start algorithm provider:
   final algorithmProvider = AlgorithmProvider(algorithmRepository);
   await algorithmProvider.loadAlgorithms();
 
   // Start UI:
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => algorithmProvider,
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => algorithmProvider),
+        ChangeNotifierProvider(create: (context) => SeedColorProvider()),
+      ],
       child: const LearnCFOPApp(),
     ),
   );
