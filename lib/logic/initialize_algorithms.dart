@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
-import '../data/algorithm_repository.dart';
-import '../data/algorithm.dart';
+import '../data/model/algorithm.dart';
+import '../data/persistence/algorithm_repository.dart';
 
 /// Loads all preset algorithms from the JSON files into local storage.
 Future<void> initializeAlgorithms(AlgorithmRepository repository) async {

@@ -2,8 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:widget_arrows/widget_arrows.dart';
 
-// used to create the arrows for OLL case icon, spares code:
-
+/// Creates arrows for the OLL case icons:
 class CFOPArrowElement extends StatelessWidget {
   final String id;
   final String? targetId;

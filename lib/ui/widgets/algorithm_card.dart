@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../data/algorithm.dart';
-import '../../data/algorithm_provider.dart';
-import 'oll_case_icon.dart';
-import 'pll_case_icon.dart';
+import '../../data/model/algorithm.dart';
+import '../../data/state/algorithms_provider.dart';
+import '../../ui/widgets/oll_case_icon.dart';
+import '../../ui/widgets/pll_case_icon.dart';
 
 class AlgorithmCard extends StatelessWidget {
   final Algorithm algorithm;
@@ -22,13 +22,9 @@ class AlgorithmCard extends StatelessWidget {
             SizedBox(
               height: 80,
               child: algorithm is OLLAlgorithm
-                  ? OLLCaseIcon(
-                      caseConfiguration:
-                          (algorithm as OLLAlgorithm).caseConfiguration,
-                    )
+                  ? OLLCaseIcon(caseConfiguration: (algorithm as OLLAlgorithm).caseConfiguration)
                   : PLLCaseIcon(
-                      caseConfiguration:
-                          (algorithm as PLLAlgorithm).caseConfiguration,
+                      caseConfiguration: (algorithm as PLLAlgorithm).caseConfiguration,
                       arrows: (algorithm as PLLAlgorithm).arrows,
                     ),
             ),
@@ -42,68 +38,24 @@ class AlgorithmCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           algorithm.label,
-                          style: Theme.of(context).textTheme.labelSmall!
-                              .copyWith(fontWeight: FontWeight.w900),
+                          style: Theme.of(context).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w900),
                         ),
                       ),
                     ],
                   ),
-                  Text(
-                    algorithm.algorithm,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(),
-                  ),
+                  Text(algorithm.algorithm, style: Theme.of(context).textTheme.titleLarge!.copyWith()),
                   algorithm.notes != null
-                      ? Text(
-                          algorithm.notes!,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        )
+                      ? Text(algorithm.notes!, style: Theme.of(context).textTheme.bodyMedium)
                       : const SizedBox(),
                 ],
               ),
             ),
             IconButton(
-              onPressed: () =>
-                  context.read<AlgorithmProvider>().togglePinned(algorithm),
+              onPressed: () => context.read<AlgorithmsProvider>().togglePinned(algorithm),
               icon: algorithm.isPinned
-                  ? Icon(
-                      Icons.push_pin,
-                      color: Theme.of(context).colorScheme.primary,
-                    )
+                  ? Icon(Icons.push_pin, color: Theme.of(context).colorScheme.primary)
                   : Icon(Icons.push_pin_outlined),
             ),
-
-            // PopupMenuButton(
-            //   menuPadding: EdgeInsets.zero,
-            //   itemBuilder: (context) {
-            //     return [
-            //       PopupMenuItem(
-            //         value: "pin",
-            //         child: ListTile(
-            //           title: Text("Pin"),
-            //           leading: algorithm.isPinned
-            //               ? Icon(
-            //                   Icons.star,
-            //                   color: Colors.amber,
-            //                 )
-            //               : Icon(Icons.star_outline),
-            //         ),
-            //       ),
-            //       PopupMenuItem(
-            //         value: "edit",
-            //         child: ListTile(
-            //           title: Text("Edit"),
-            //           leading: Icon(Icons.edit_outlined),
-            //         ),
-            //       ),
-            //     ];
-            //   },
-            //   onSelected: (value) {
-            //     if (value == "pin") {
-            //       context.read<AlgorithmProvider>().togglePinned(algorithm);
-            //     }
-            //     if (value == "edit") {}
-            //   },
-            // ),
           ],
         ),
       ),

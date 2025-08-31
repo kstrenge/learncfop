@@ -1,4 +1,4 @@
-import 'algorithm.dart';
+import '../../data/model/algorithm.dart';
 
 /// Interface for services that save algorithms persistently, e.g. in a database.
 abstract class AlgorithmRepository {

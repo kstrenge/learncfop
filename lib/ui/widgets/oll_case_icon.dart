@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 
 class OLLCaseIcon extends StatelessWidget {
   final List<int> caseConfiguration;
-  const OLLCaseIcon({
-    required this.caseConfiguration,
-    super.key,
-  });
+  const OLLCaseIcon({required this.caseConfiguration, super.key});
 
   @override
   Widget build(BuildContext context) {
     // draw pieces in grey or orange:
-    List<Color> colors =
-        List.generate(22, (_) => const Color.fromRGBO(100, 100, 100, 1));
+    List<Color> colors = List.generate(22, (_) => const Color.fromRGBO(100, 100, 100, 1));
 
     for (int index in caseConfiguration) {
       colors[index] = Colors.yellow;
@@ -31,11 +27,9 @@ class OLLCaseIcon extends StatelessWidget {
               flex: 1,
               child: Row(
                 children: [
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                   Expanded(flex: 31, child: Container(color: Colors.black)),
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                 ],
               ),
             ),
@@ -43,8 +37,7 @@ class OLLCaseIcon extends StatelessWidget {
               flex: 3,
               child: Row(
                 children: [
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: colors[1])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
@@ -52,8 +45,7 @@ class OLLCaseIcon extends StatelessWidget {
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: colors[3])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                 ],
               ),
             ),
@@ -119,8 +111,7 @@ class OLLCaseIcon extends StatelessWidget {
               flex: 3,
               child: Row(
                 children: [
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: colors[19])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
@@ -128,8 +119,7 @@ class OLLCaseIcon extends StatelessWidget {
                   Expanded(flex: 1, child: Container(color: Colors.black)),
                   Expanded(flex: 9, child: Container(color: colors[21])),
                   Expanded(flex: 1, child: Container(color: Colors.black)),
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                 ],
               ),
             ),
@@ -137,11 +127,9 @@ class OLLCaseIcon extends StatelessWidget {
               flex: 1,
               child: Row(
                 children: [
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                   Expanded(flex: 31, child: Container(color: Colors.black)),
-                  Expanded(
-                      flex: 4, child: Container(color: Colors.transparent)),
+                  Expanded(flex: 4, child: Container(color: Colors.transparent)),
                 ],
               ),
             ),

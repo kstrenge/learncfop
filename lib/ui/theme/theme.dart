@@ -3,7 +3,10 @@ import "package:flutter/services.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:provider/provider.dart";
 
-List<Color> seedColors = [
+import "../../data/state/theme_color_provider.dart";
+
+/// List of colors that the user can select as a theme color.
+List<Color> themeColors = [
   Colors.amber,
   Colors.blue,
   Colors.blueGrey,
@@ -25,22 +28,11 @@ List<Color> seedColors = [
   Colors.yellow,
 ];
 
-class SeedColorProvider extends ChangeNotifier {
-  Color seedColor = Colors.green;
-
-  setSeedColor(Color newSeedColor) {
-    seedColor = newSeedColor;
-    notifyListeners();
-  }
-}
-
 ThemeData lightTheme(BuildContext context) {
   return ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: context.watch<SeedColorProvider>().seedColor,
-    ),
+    colorScheme: ColorScheme.fromSeed(seedColor: context.watch<ThemeColorProvider>().themeColor),
     fontFamily: GoogleFonts.orbitron().fontFamily,
   );
 }
@@ -50,13 +42,14 @@ ThemeData darkTheme(BuildContext context) {
     useMaterial3: true,
     brightness: Brightness.dark,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: context.watch<SeedColorProvider>().seedColor,
+      seedColor: context.watch<ThemeColorProvider>().themeColor,
       brightness: Brightness.dark,
     ),
     fontFamily: GoogleFonts.orbitron().fontFamily,
   );
 }
 
+/// ButtonStyle that creates TextButtons with foreground + icon in given color.
 ButtonStyle coloredTextButtonStyle(Color color) {
   return ButtonStyle(
     foregroundColor: WidgetStatePropertyAll(color),
@@ -65,6 +58,8 @@ ButtonStyle coloredTextButtonStyle(Color color) {
   );
 }
 
+/// Makes system navigation bar and status bar transparent. Call at startup.
+/// Call WidgetsFlutterBinding.ensureInitialized() beforehand!
 void makeSystemNavigationTransparent() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -75,13 +70,11 @@ void makeSystemNavigationTransparent() {
       systemStatusBarContrastEnforced: false,
     ),
   );
-  SystemChrome.setEnabledSystemUIMode(
-    SystemUiMode.edgeToEdge,
-    overlays: [SystemUiOverlay.top],
-  );
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: [SystemUiOverlay.top]);
 }
 
-Color rippleColorFromBackground(Color background) {
+/// Helper method to determine visible ripple color from given Color background.
+Color getRippleColorFromBackground(Color background) {
   return ThemeData.estimateBrightnessForColor(background) == Brightness.dark
       ? Colors.white.withValues(alpha: 0.2)
       : Colors.black.withValues(alpha: 0.2);

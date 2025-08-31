@@ -1,8 +1,8 @@
-import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:hive/hive.dart';
 
-import 'algorithm.dart';
-import 'algorithm_repository.dart';
+import '../../data/model/algorithm.dart';
+import '../../data/persistence/algorithm_repository.dart';
 
 /// Implementation of AlgorithmRepository. Uses Hive for local storage.
 class HiveAlgorithmRepository implements AlgorithmRepository {
@@ -20,8 +20,7 @@ class HiveAlgorithmRepository implements AlgorithmRepository {
     assert(_box.isOpen, "Start Hive first with algorithmProvider.startup()");
     assert(_box.isNotEmpty, "Put algorithms in repository first");
 
-    return _box.toMap().map((key, value) =>
-        MapEntry(key, Algorithm.fromJson(Map<String, dynamic>.from(value))));
+    return _box.toMap().map((key, value) => MapEntry(key, Algorithm.fromJson(Map<String, dynamic>.from(value))));
   }
 
   @override

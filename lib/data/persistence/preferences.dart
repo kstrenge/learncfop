@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferences {
@@ -21,14 +22,29 @@ class Preferences {
   }
 
   /// Loads the chosen username from storage.
-  static Future<String> loadUsername() async {
+  static Future<String?> loadUsername() async {
     assert(_preferences != null, "call init() first");
-    return _preferences!.getString("username") ?? "";
+    return _preferences!.getString("username");
   }
 
   /// Saves the chosen username to storage.
   static Future<void> saveUsername(String? value) async {
     assert(_preferences != null, "call init() first");
     await _preferences!.setString("username", value ?? "");
+  }
+
+  /// Loads the chosen theme color from storage.
+  static Future<Color?> loadThemeColor() async {
+    assert(_preferences != null, "call init() first");
+    if (_preferences!.getInt("themeColor") != null) {
+      return Color(_preferences!.getInt("themeColor")!);
+    }
+    return null;
+  }
+
+  /// Saves the chosen theme color to storage.
+  static Future<void> saveThemeColor(Color color) async {
+    assert(_preferences != null, "call init() first");
+    await _preferences!.setInt("themeColor", color.toARGB32());
   }
 }

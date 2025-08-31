@@ -1,4 +1,4 @@
-import 'dart:math' as math;
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class EasterEgg extends StatefulWidget {
@@ -8,12 +8,8 @@ class EasterEgg extends StatefulWidget {
   State<EasterEgg> createState() => _EasterEggState();
 }
 
-class _EasterEggState extends State<EasterEgg>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController controller = AnimationController(
-    vsync: this,
-    duration: Duration(milliseconds: 300),
-  );
+class _EasterEggState extends State<EasterEgg> with SingleTickerProviderStateMixin {
+  late final AnimationController controller = AnimationController(vsync: this, duration: Duration(milliseconds: 300));
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +17,12 @@ class _EasterEggState extends State<EasterEgg>
       animation: controller,
       builder: (context, child) {
         return Transform.rotate(
-          angle: controller.value * 2 * math.pi,
+          angle: controller.value * 2 * pi,
           child: SizedBox(
             width: 200,
             height: 200,
             child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
-              ),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
               color: Colors.white,
               elevation: 12,
               child: InkWell(
