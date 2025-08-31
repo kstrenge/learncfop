@@ -1,32 +1,40 @@
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-// import '../../data/username_provider.dart';
+import '../../data/state/username_provider.dart';
 
-// class Username extends StatelessWidget {
-//   const Username({super.key});
+class Username extends StatefulWidget {
+  const Username({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     print("rebuild");
-//     return Expanded(
-//       child: TextFormField(
-//         initialValue: context.watch<UsernameProvider>().username,
-//         decoration: InputDecoration(
-//           isDense: true,
-//           hintText: "cuber",
-//           enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
-//           focusedBorder: UnderlineInputBorder(),
-//         ),
-//         style: DefaultTextStyle.of(
-//           context,
-//         ).style.copyWith(color: Theme.of(context).colorScheme.primary),
-//         onChanged: (newInput) =>
-//             context.read<UsernameProvider>().updateUsername(newInput),
-//         onTapOutside: (event) => FocusScope.of(context).unfocus(),
-//       ),
-//     );
-//   }
-// }
+  @override
+  State<Username> createState() => _UsernameState();
+}
 
-// TODO
+class _UsernameState extends State<Username> {
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    _controller.text = context.watch<UsernameProvider>().username;
+    return Expanded(
+      child: TextFormField(
+        controller: _controller,
+        decoration: InputDecoration(
+          isDense: true,
+          hintText: "cuber",
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
+          focusedBorder: UnderlineInputBorder(),
+        ),
+        style: DefaultTextStyle.of(context).style.copyWith(color: Theme.of(context).colorScheme.primary),
+        onChanged: (newInput) => context.read<UsernameProvider>().setUsername(newInput),
+        onTapOutside: (event) => FocusScope.of(context).unfocus(),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
