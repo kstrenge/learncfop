@@ -31,7 +31,7 @@ class _EasterEggState extends State<EasterEgg> with SingleTickerProviderStateMix
                   controller.reset();
                   controller.forward();
                 },
-                child: Image.asset("assets/icon/foreground.png"),
+                child: Image.asset("assets/icon/icon_foreground.png"),
               ),
             ),
           ),
