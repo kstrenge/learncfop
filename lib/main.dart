@@ -15,12 +15,14 @@ import 'ui/pages/pll2look_page.dart';
 import 'ui/theme/theme.dart';
 
 void main() async {
-  // Start services:
+  // Make system navigation transparent:
   WidgetsFlutterBinding.ensureInitialized();
   makeSystemNavigationTransparent();
 
+  // Load user preferences:
   Preferences.init();
 
+  // Start persistent storage service
   final algorithmRepository = HiveAlgorithmRepository();
   await algorithmRepository.startup();
 

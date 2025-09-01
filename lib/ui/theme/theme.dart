@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
-import "package:google_fonts/google_fonts.dart";
 import "package:provider/provider.dart";
 
 import "../../data/state/theme_color_provider.dart";
@@ -33,7 +32,7 @@ ThemeData lightTheme(BuildContext context) {
     useMaterial3: true,
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(seedColor: context.watch<ThemeColorProvider>().themeColor),
-    fontFamily: GoogleFonts.orbitron().fontFamily,
+    fontFamily: "Orbitron",
   );
 }
 
@@ -45,7 +44,7 @@ ThemeData darkTheme(BuildContext context) {
       seedColor: context.watch<ThemeColorProvider>().themeColor,
       brightness: Brightness.dark,
     ),
-    fontFamily: GoogleFonts.orbitron().fontFamily,
+    fontFamily: "Orbitron",
   );
 }
 
