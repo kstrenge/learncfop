@@ -57,24 +57,17 @@ ButtonStyle coloredTextButtonStyle(Color color) {
   );
 }
 
-/// Makes system navigation bar and status bar transparent. Call at startup.
-/// Call WidgetsFlutterBinding.ensureInitialized() beforehand!
-void makeSystemNavigationTransparent() {
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarDividerColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.dark,
-      systemStatusBarContrastEnforced: false,
-    ),
-  );
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: [SystemUiOverlay.top]);
-}
-
 /// Helper method to determine visible ripple color from given Color background.
 Color getRippleColorFromBackground(Color background) {
   return ThemeData.estimateBrightnessForColor(background) == Brightness.dark
       ? Colors.white.withValues(alpha: 0.2)
       : Colors.black.withValues(alpha: 0.2);
 }
+
+/// Makes system navigation transparent. Apply to app bar.
+const transparentSystemUiOverlayStyle = SystemUiOverlayStyle(
+  statusBarColor: Colors.transparent,
+  systemNavigationBarColor: Colors.transparent,
+  systemStatusBarContrastEnforced: false,
+  systemNavigationBarContrastEnforced: false,
+);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'data/persistence/hive_algorithm_repository.dart';
@@ -15,9 +16,15 @@ import 'ui/pages/pll2look_page.dart';
 import 'ui/theme/theme.dart';
 
 void main() async {
-  // Make system navigation transparent:
   WidgetsFlutterBinding.ensureInitialized();
-  makeSystemNavigationTransparent();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.light,
+      systemNavigationBarContrastEnforced: false,
+    ),
+  );
 
   // Load user preferences:
   Preferences.init();
@@ -32,7 +39,7 @@ void main() async {
     await Preferences.markAsLaunchedBefore();
   }
 
-  // Start providers:
+  // Create providers:
   final algorithmProvider = AlgorithmsProvider(algorithmRepository);
   await algorithmProvider.loadAlgorithms();
   final themeColorProvider = ThemeColorProvider();
@@ -40,14 +47,15 @@ void main() async {
   final usernameProvider = UsernameProvider();
   await usernameProvider.loadUsername();
 
-  // Start UI:
   runApp(
     MultiProvider(
+      // Apply providers:
       providers: [
         ChangeNotifierProvider(create: (context) => algorithmProvider),
         ChangeNotifierProvider(create: (context) => themeColorProvider),
         ChangeNotifierProvider(create: (context) => usernameProvider),
       ],
+      // Start app:
       child: const LearnCFOPApp(),
     ),
   );

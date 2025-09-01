@@ -5,6 +5,7 @@ import '../../data/model/algorithm.dart';
 import '../../data/state/algorithms_provider.dart';
 import '../../ui/pages/info_page.dart';
 import '../../ui/pages/theme_page.dart';
+import '../../ui/theme/theme.dart';
 import '../../ui/widgets/algorithm_card.dart';
 import '../../ui/widgets/username.dart';
 
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
+            systemOverlayStyle: transparentSystemUiOverlayStyle,
             title: Row(children: [Text("Welcome, "), Username()]),
             actions: [
               IconButton(
