@@ -22,8 +22,9 @@ class _UsernameState extends State<Username> {
         decoration: InputDecoration(
           isDense: true,
           hintText: "cuber",
+          hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
           enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
-          focusedBorder: UnderlineInputBorder(),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary)),
         ),
         style: DefaultTextStyle.of(context).style.copyWith(color: Theme.of(context).colorScheme.primary),
         onChanged: (newInput) => context.read<UsernameProvider>().setUsername(newInput),
