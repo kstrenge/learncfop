@@ -23,6 +23,8 @@ class InfoPage extends StatelessWidget {
               const SizedBox(height: 32, width: double.infinity),
               const Text("made by kstrenge"),
               const SizedBox(height: 32),
+              const Text("This app is open source.\nHelp it get better:", textAlign: TextAlign.center),
+              const SizedBox(height: 8),
               TextButton.icon(
                 label: const Text("Link to GitHub"),
                 icon: const FaIcon(FontAwesomeIcons.github),
