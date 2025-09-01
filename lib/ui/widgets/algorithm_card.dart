@@ -36,17 +36,14 @@ class AlgorithmCard extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Text(
-                          algorithm.label,
-                          style: Theme.of(context).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w900),
-                        ),
+                        child: Text(algorithm.label, style: TextStyle(fontWeight: FontWeight.w700)),
                       ),
                     ],
                   ),
-                  Text(algorithm.algorithm, style: Theme.of(context).textTheme.titleLarge!.copyWith()),
-                  algorithm.notes != null
-                      ? Text(algorithm.notes!, style: Theme.of(context).textTheme.bodyMedium)
-                      : const SizedBox(),
+                  SizedBox(height: 2),
+                  Text(algorithm.algorithm, style: Theme.of(context).textTheme.titleLarge),
+                  SizedBox(height: 2),
+                  algorithm.notes != null ? Text(algorithm.notes!) : const SizedBox(),
                 ],
               ),
             ),
