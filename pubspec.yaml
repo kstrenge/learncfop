@@ -70,7 +70,9 @@ flutter:
   assets:
     - assets/algorithms/
     - assets/icon/icon.png
-    - assets/icon/foreground.png
+    - assets/icon/icon_foreground.png
+    - assets/icon/icon_foreground_monochrome.png
+    - assets/icon/icon_tinted.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
