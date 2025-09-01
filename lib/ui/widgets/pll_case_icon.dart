@@ -11,7 +11,7 @@ class PLLCaseIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const int LINE_THICKNESS = 2;
+    const int lineThickness = 2;
 
     // draw side pieces in their colors:
     List<Color> sideColors = [];
@@ -98,19 +98,19 @@ class PLLCaseIcon extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                flex: LINE_THICKNESS,
+                flex: lineThickness,
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                     Expanded(
-                      flex: 27 + 4 * LINE_THICKNESS,
+                      flex: 27 + 4 * lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                   ],
@@ -121,37 +121,37 @@ class PLLCaseIcon extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 9, child: Container(color: sideColors[0])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 9, child: Container(color: sideColors[1])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 9, child: Container(color: sideColors[2])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: LINE_THICKNESS,
+                flex: lineThickness,
                 child: Container(color: Colors.black),
               ),
               Expanded(
@@ -159,12 +159,12 @@ class PLLCaseIcon extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 3, child: Container(color: sideColors[11])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -174,7 +174,7 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -184,7 +184,7 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -194,19 +194,19 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 3, child: Container(color: sideColors[3])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: LINE_THICKNESS,
+                flex: lineThickness,
                 child: Container(color: Colors.black),
               ),
               Expanded(
@@ -214,12 +214,12 @@ class PLLCaseIcon extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 3, child: Container(color: sideColors[10])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -229,7 +229,7 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -239,7 +239,7 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -249,19 +249,19 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 3, child: Container(color: sideColors[4])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: LINE_THICKNESS,
+                flex: lineThickness,
                 child: Container(color: Colors.black),
               ),
               Expanded(
@@ -269,12 +269,12 @@ class PLLCaseIcon extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 3, child: Container(color: sideColors[9])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -284,7 +284,7 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -294,7 +294,7 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     CFOPArrowElement(
@@ -304,19 +304,19 @@ class PLLCaseIcon extends StatelessWidget {
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 3, child: Container(color: sideColors[5])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: LINE_THICKNESS,
+                flex: lineThickness,
                 child: Container(color: Colors.black),
               ),
               Expanded(
@@ -324,49 +324,49 @@ class PLLCaseIcon extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 9, child: Container(color: sideColors[8])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 9, child: Container(color: sideColors[7])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(flex: 9, child: Container(color: sideColors[6])),
                     Expanded(
-                      flex: LINE_THICKNESS,
+                      flex: lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: LINE_THICKNESS,
+                flex: lineThickness,
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                     Expanded(
-                      flex: 27 + 4 * LINE_THICKNESS,
+                      flex: 27 + 4 * lineThickness,
                       child: Container(color: Colors.black),
                     ),
                     Expanded(
-                      flex: 3 + LINE_THICKNESS,
+                      flex: 3 + lineThickness,
                       child: Container(color: Colors.transparent),
                     ),
                   ],

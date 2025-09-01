@@ -6,7 +6,7 @@ class OLLCaseIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const int LINE_THICKNESS = 2;
+    const int lineThickness = 2;
 
     // generate grey/yellow color list:
     List<Color> colors = List.generate(22, (_) => const Color.fromRGBO(100, 100, 100, 1));
@@ -25,19 +25,19 @@ class OLLCaseIcon extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              flex: LINE_THICKNESS,
+              flex: lineThickness,
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                   Expanded(
-                    flex: 27 + 4 * LINE_THICKNESS,
+                    flex: 27 + 4 * lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                 ],
@@ -48,37 +48,37 @@ class OLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[1])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[2])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[3])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                 ],
               ),
             ),
             Expanded(
-              flex: LINE_THICKNESS,
+              flex: lineThickness,
               child: Container(color: Colors.black),
             ),
             Expanded(
@@ -86,39 +86,39 @@ class OLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 3, child: Container(color: colors[4])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[5])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[6])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[7])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 3, child: Container(color: colors[8])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                 ],
               ),
             ),
             Expanded(
-              flex: LINE_THICKNESS,
+              flex: lineThickness,
               child: Container(color: Colors.black),
             ),
             Expanded(
@@ -126,39 +126,39 @@ class OLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 3, child: Container(color: colors[9])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[10])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[11])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[12])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 3, child: Container(color: colors[13])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                 ],
               ),
             ),
             Expanded(
-              flex: LINE_THICKNESS,
+              flex: lineThickness,
               child: Container(color: Colors.black),
             ),
             Expanded(
@@ -166,39 +166,39 @@ class OLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 3, child: Container(color: colors[14])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[15])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[16])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[17])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 3, child: Container(color: colors[18])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                 ],
               ),
             ),
             Expanded(
-              flex: LINE_THICKNESS,
+              flex: lineThickness,
               child: Container(color: Colors.black),
             ),
             Expanded(
@@ -206,49 +206,49 @@ class OLLCaseIcon extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[19])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[20])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(flex: 9, child: Container(color: colors[21])),
                   Expanded(
-                    flex: LINE_THICKNESS,
+                    flex: lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                 ],
               ),
             ),
             Expanded(
-              flex: LINE_THICKNESS,
+              flex: lineThickness,
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                   Expanded(
-                    flex: 27 + 4 * LINE_THICKNESS,
+                    flex: 27 + 4 * lineThickness,
                     child: Container(color: Colors.black),
                   ),
                   Expanded(
-                    flex: 3 + LINE_THICKNESS,
+                    flex: 3 + lineThickness,
                     child: Container(color: Colors.transparent),
                   ),
                 ],
