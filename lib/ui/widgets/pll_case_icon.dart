@@ -11,6 +11,8 @@ class PLLCaseIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const int LINE_THICKNESS = 2;
+
     // draw side pieces in their colors:
     List<Color> sideColors = [];
     for (String color in caseConfiguration) {
@@ -84,11 +86,10 @@ class PLLCaseIcon extends StatelessWidget {
       }
     }
 
-    // grid information:
-    // breite mittelstein: 9
-    // breite randstein: 3
-    // insgesamte breite: 39
-    // breite ohne rand: 31
+    // Grid information:
+    // thickness center piece: 9
+    // thickness cornder piece: 3
+    // total thickness: 33 + 6 * LINE_THICKNESS
 
     return ArrowContainer(
       child: SizedBox(
@@ -97,12 +98,21 @@ class PLLCaseIcon extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                flex: 1,
+                flex: LINE_THICKNESS,
                 child: Row(
                   children: [
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
-                    Expanded(flex: 31, child: Container(color: Colors.black)),
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
+                    Expanded(
+                      flex: 27 + 4 * LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
                   ],
                 ),
               ),
@@ -110,144 +120,255 @@ class PLLCaseIcon extends StatelessWidget {
                 flex: 3,
                 child: Row(
                   children: [
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 9, child: Container(color: sideColors[0])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 9, child: Container(color: sideColors[1])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 9, child: Container(color: sideColors[2])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
                   ],
                 ),
               ),
-              Expanded(child: Container(color: Colors.black)),
+              Expanded(
+                flex: LINE_THICKNESS,
+                child: Container(color: Colors.black),
+              ),
               Expanded(
                 flex: 9,
                 child: Row(
                   children: [
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 3, child: Container(color: sideColors[11])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "1",
                       targetId: targetId1,
                       doubleSided: isDoubleSided1,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "2",
                       targetId: targetId2,
                       doubleSided: isDoubleSided2,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "3",
                       targetId: targetId3,
                       doubleSided: isDoubleSided3,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 3, child: Container(color: sideColors[3])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                   ],
                 ),
               ),
-              Expanded(child: Container(color: Colors.black)),
+              Expanded(
+                flex: LINE_THICKNESS,
+                child: Container(color: Colors.black),
+              ),
               Expanded(
                 flex: 9,
                 child: Row(
                   children: [
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 3, child: Container(color: sideColors[10])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "4",
                       targetId: targetId4,
                       doubleSided: isDoubleSided4,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "5",
                       targetId: targetId5,
                       doubleSided: isDoubleSided5,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "6",
                       targetId: targetId6,
                       doubleSided: isDoubleSided6,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 3, child: Container(color: sideColors[4])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                   ],
                 ),
               ),
-              Expanded(child: Container(color: Colors.black)),
+              Expanded(
+                flex: LINE_THICKNESS,
+                child: Container(color: Colors.black),
+              ),
               Expanded(
                 flex: 9,
                 child: Row(
                   children: [
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 3, child: Container(color: sideColors[9])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "7",
                       targetId: targetId7,
                       doubleSided: isDoubleSided7,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "8",
                       targetId: targetId8,
                       doubleSided: isDoubleSided8,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     CFOPArrowElement(
                       id: "9",
                       targetId: targetId9,
                       doubleSided: isDoubleSided9,
                       child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
                     ),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 3, child: Container(color: sideColors[5])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                   ],
                 ),
               ),
-              Expanded(child: Container(color: Colors.black)),
+              Expanded(
+                flex: LINE_THICKNESS,
+                child: Container(color: Colors.black),
+              ),
               Expanded(
                 flex: 3,
                 child: Row(
                   children: [
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 9, child: Container(color: sideColors[8])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 9, child: Container(color: sideColors[7])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
                     Expanded(flex: 9, child: Container(color: sideColors[6])),
-                    Expanded(flex: 1, child: Container(color: Colors.black)),
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
+                    Expanded(
+                      flex: LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
                   ],
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: LINE_THICKNESS,
                 child: Row(
                   children: [
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
-                    Expanded(flex: 31, child: Container(color: Colors.black)),
-                    Expanded(flex: 4, child: Container(color: Colors.transparent)),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
+                    Expanded(
+                      flex: 27 + 4 * LINE_THICKNESS,
+                      child: Container(color: Colors.black),
+                    ),
+                    Expanded(
+                      flex: 3 + LINE_THICKNESS,
+                      child: Container(color: Colors.transparent),
+                    ),
                   ],
                 ),
               ),
