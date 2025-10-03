@@ -44,7 +44,7 @@ class InfoPage extends StatelessWidget {
                 onPressed: () async => await launchUrl(Uri.parse("https://github.com/kstrenge/learncfop/issues")),
               ),
               Spacer(),
-              Text("Version 2.0"),
+              Text("Version 2.1"),
               SizedBox(height: 8),
               TextButton.icon(
                 label: const Text("Privacy Policy"),
