@@ -18,7 +18,7 @@ class OLL2LookPage extends StatelessWidget {
       title: "Orientation of Last Layer in 2 steps",
       algorithmSliverList: algorithms != null && algorithms.isNotEmpty
           ? SliverList.separated(
-              itemCount: algorithms.length,
+              itemCount: algorithms.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Text("Step 1 - Corners:");
