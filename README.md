@@ -1,4 +1,6 @@
-# LEARN CFOP APP
+# LEARN CFOP
+
+![learncfop logo](assets/playstore/graphic_playstore.png)
 
 Welcome to Learn CFOP, your speedcube memory aid!
 
